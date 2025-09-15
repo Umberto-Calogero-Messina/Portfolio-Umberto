@@ -1,0 +1,7 @@
+.text-large-bold {
+  font-size: clamp(2.5rem, 10vw, 6.25rem);
+  font-weight: bold;
+  color: var(--color-text-dark, #333);
+  margin: 0;
+  position: relative;
+}
