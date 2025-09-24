@@ -1,6 +1,22 @@
-import React, { useEffect, useState, useRef, useMemo } from 'react';
-import { useSpring, animated, config } from 'react-spring';
-import styled, { createGlobalStyle } from 'styled-components';
+import { useEffect, useState, useRef, useMemo } from 'react';
+import { useSpring, animated } from 'react-spring';
+import useRevealOnScroll from '../../hooks/useRevealOnScroll';
+import useInViewport from '../../hooks/useInViewport';
+import {
+  Container,
+  Heading,
+  RevealWrap,
+  EllipseContainer,
+  CardLink,
+  Card as CardBase,
+  ImageWrapper,
+  Content,
+  Title,
+  Description,
+  GridWrapper,
+  GridCard,
+  GridImageWrapper
+} from './Parallax.styles';
 
 const works = [
   {
@@ -53,124 +69,66 @@ const works = [
   }
 ];
 
-// Styled components
-const Container = styled.section`
-  min-height: 90vh;
-  padding: 80px 20px;
-  position: relative;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  overflow-x: hidden;
-  background-color: black;
-  padding-bottom:300px;
-`;
-
-const Heading = styled.h2`
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 60px;
-  user-select: none;
-`;
-
-const EllipseContainer = styled.div`
-  position: relative;
-  width: 100px;
-  height: 600px;
-  perspective: 1200px;
-  overflow: visible;
-`;
-
-const CardLink = styled.a`
-  color: inherit;
-`;
-
-const Card = styled(animated.div)`
-  position: absolute;
-  width: 280px;
-  height: 380px;
-  border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-accent);
-  overflow: hidden;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
-  z-index: ${props => props.zIndex};
-
-  &:hover {
-    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-  }
-`;
-
-const ImageWrapper = styled.div`
-  flex: 1 1 auto;
-  overflow: hidden;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  cursor: ${props => (props.dragging ? 'grabbing' : 'grab')};
-  user-select: ${props => (props.dragging ? 'none' : 'auto')};
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-
-  ${Card}:hover & img {
-    transform: scale(1.1);
-  }
-`;
-
-const Content = styled.div`
-  padding: 16px 20px;
-  background: rgba(0,0,0,0.5);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-`;
-
-const Title = styled.h3`
-  margin: 0 0 8px;
-  font-size: 1.3rem;
-  font-weight: 700;
-`;
-
-const Description = styled.p`
-  margin: 0;
-  font-weight: 300;
-  font-size: 0.95rem;
-  line-height: 1.3;
-`;
+// moved styles to Parallax.styles.js
 
 const ParallaxEllipseCards = () => {
   // UI state
   const [scrollY, setScrollY] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [hoveredId, setHoveredId] = useState(null);
   const [manualRotation, setManualRotation] = useState(0); // rotation added by dragging
   const [dragging, setDragging] = useState(false);
+
+  // responsive: enable parallax only on laptop/desktop by width
+  const isDesktop = windowWidth >= 1024;
+
+  // reveal state (one-time reveal for title)
+  const reveal = useRevealOnScroll({ threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+
+  // continuous visibility state for parallax animation
+  const viewport = useInViewport({ threshold: 0, rootMargin: '0px' });
 
   // refs for drag
   const ticking = useRef(false);
   const dragStartXRef = useRef(0);
   const startManualRotationRef = useRef(0);
   const hasDraggedRef = useRef(false);
+  // viewport scroll baseline refs
+  const viewportEnterScrollYRef = useRef(0);
+  const wasInViewRef = useRef(false);
 
-  // geometry
+  // geometry - adapt ellipse to viewport (90% height) and keep cards within bounds
+  const CARD_W = 300;
+  const H_PADDING = 100; // safe total horizontal margin (left + right)
+
   const centerX = windowWidth / 2;
   const centerY = 400;
-  const radiusX = Math.min(700, windowWidth / 2);
-  const radiusY = 230; // ellisse leggermente piatta
+  // keep within viewport horizontally and cap like before for nicer shape
+  const radiusX = Math.min(500, Math.max(0, (windowWidth - H_PADDING - CARD_W) / 2));
+  // keep within ellipse container vertically and slightly flatten for aesthetics
+  const radiusY = 100;
   const baseAngle = (2 * Math.PI) / works.length;
 
   // tuning
   const SCROLL_SPEED = 0.007; // slower rotation on scroll (was ~0.01)
   const DRAG_SENSITIVITY = 0.004; // px to angle multiplier for dragging
 
+  // Keep windowWidth in sync (so isDesktop updates on orientation/resize)
   useEffect(() => {
+    const onResize = () => {
+      setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
+    };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return; // no parallax listeners on mobile/tablet
+
     const onScroll = () => {
+      if (!viewport.inView) return; // only update when section is in viewport
       if (!ticking.current) {
         window.requestAnimationFrame(() => {
           setScrollY(window.pageYOffset);
@@ -179,24 +137,44 @@ const ParallaxEllipseCards = () => {
         ticking.current = true;
       }
     };
-    const onResize = () => setWindowWidth(window.innerWidth);
 
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onResize);
 
     return () => {
       window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onResize);
     };
-  }, []);
+  }, [viewport.inView, isDesktop]);
 
-  // Compute target rotation combining scroll + manual drag contribution
-  const targetRotation = useMemo(() => scrollY * SCROLL_SPEED + manualRotation, [scrollY, manualRotation]);
+  // Reset scroll baseline when entering viewport; commit accumulated rotation on exit
+  useEffect(() => {
+    if (!isDesktop) return; // no baseline handling on mobile/tablet
+
+    if (viewport.inView) {
+      const y = window.pageYOffset;
+      viewportEnterScrollYRef.current = y; // set baseline on enter
+      setScrollY(y); // align state so initial delta = 0
+      wasInViewRef.current = true;
+    } else {
+      if (wasInViewRef.current) {
+        // commit delta (while visible) into manual rotation to avoid jump on exit
+        setManualRotation(prev => prev + (scrollY - viewportEnterScrollYRef.current) * SCROLL_SPEED);
+        wasInViewRef.current = false;
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [viewport.inView, isDesktop]);
+
+  // Compute target rotation combining scroll delta while in view + manual drag
+  const targetRotation = useMemo(
+    () =>
+      viewport.inView ? (scrollY - viewportEnterScrollYRef.current) * SCROLL_SPEED + manualRotation : manualRotation,
+    [scrollY, manualRotation, viewport.inView]
+  );
 
   // Smooth spring to make the motion clearer and less abrupt
   const { rotation } = useSpring({
     to: { rotation: targetRotation },
-    config: { tension: 90, friction: 24, mass: 1.1 }
+    config: { tension: 90, friction: 35, mass: 3 }
   });
 
   // Drag handlers
@@ -208,8 +186,7 @@ const ParallaxEllipseCards = () => {
   };
 
   const onMouseDown = e => {
-    // left click only
-    if (e.button !== 0) return;
+    if (e.button !== 0) return; // left click only
     e.preventDefault();
     startDrag(e.clientX);
   };
@@ -221,7 +198,7 @@ const ParallaxEllipseCards = () => {
   };
 
   useEffect(() => {
-    if (!dragging) return;
+    if (!dragging || !isDesktop) return;
 
     const handleMove = e => {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
@@ -232,7 +209,6 @@ const ParallaxEllipseCards = () => {
 
     const handleUp = () => {
       setDragging(false);
-      // Small timeout to avoid triggering click right after drag end
       setTimeout(() => {
         hasDraggedRef.current = false;
       }, 0);
@@ -249,7 +225,7 @@ const ParallaxEllipseCards = () => {
       window.removeEventListener('touchmove', handleMove);
       window.removeEventListener('touchend', handleUp);
     };
-  }, [dragging, DRAG_SENSITIVITY]);
+  }, [dragging, DRAG_SENSITIVITY, isDesktop]);
 
   const preventNavigationIfDragging = e => {
     if (dragging || hasDraggedRef.current) {
@@ -258,58 +234,113 @@ const ParallaxEllipseCards = () => {
     }
   };
 
+  const Card = animated(CardBase);
+
   return (
-    <>
-      <Container dragging={dragging}>
+    <Container
+      id='portfolio'
+      ref={node => {
+        reveal.ref.current = node;
+        viewport.ref.current = node;
+      }}
+    >
+      <RevealWrap $revealed={reveal.isVisible}>
         <Heading>I miei lavori</Heading>
-        <EllipseContainer onMouseDown={onMouseDown} onTouchStart={onTouchStart}>
-          {works.map((work, i) => (
-            <CardLink
-              key={work.id}
-              href={work.url}
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label={`Vai al progetto ${work.title}`}
-              onClick={preventNavigationIfDragging}
-            >
-              <Card
-                zIndex={hoveredId === work.id ? 10000 : undefined}
-                onMouseEnter={() => setHoveredId(work.id)}
-                onMouseLeave={() => setHoveredId(null)}
-                style={{
-                  transform: rotation.to(angle => {
-                    const cardAngle = baseAngle * i + angle;
-                    const x = centerX + radiusX * Math.cos(cardAngle) - 400 / 2;
-                    const y = centerY + radiusY * Math.sin(cardAngle) - 380 / 2;
-                    const z = Math.sin(cardAngle); // profondità 3D
-                    const baseScale = 0.7 + 0.5 * ((Math.sin(cardAngle) + 1) / 2);
-                    const scale = hoveredId === work.id ? baseScale * 1.15 : baseScale;
-                    return `translate3d(${x}px, ${y}px, ${z}px) scale(${scale.toFixed(2)})`;
-                  }),
-                  opacity: rotation.to(angle => {
-                    const cardAngle = baseAngle * i + angle;
-                    return 0.2 + 1 * ((Math.sin(cardAngle) + 1) / 2);
-                  }),
-                  zIndex: rotation.to(angle => {
-                    const cardAngle = baseAngle * i + angle;
-                    const baseScale = 0.6 + 0.4 * ((Math.sin(cardAngle) + 1) / 2);
-                    return hoveredId === work.id ? 10000 : Math.round(baseScale * 100);
-                  })
-                }}
+      </RevealWrap>
+
+      {reveal.isVisible &&
+        (isDesktop ? (
+          <RevealWrap $revealed={reveal.isVisible}>
+            <EllipseContainer onMouseDown={onMouseDown} onTouchStart={onTouchStart}>
+              {works.map((work, i) => (
+                <CardLink
+                  key={work.id}
+                  href={work.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label={`Vai al progetto ${work.title}`}
+                  onClick={preventNavigationIfDragging}
+                >
+                  <Card
+                    zIndex={hoveredId === work.id ? 10000 : undefined}
+                    onMouseEnter={e => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      e.currentTarget.style.setProperty('--x', `${e.clientX - rect.left}px`);
+                      e.currentTarget.style.setProperty('--y', `${e.clientY - rect.top}px`);
+                      setHoveredId(work.id);
+                    }}
+                    onMouseMove={e => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      e.currentTarget.style.setProperty('--x', `${e.clientX - rect.left}px`);
+                      e.currentTarget.style.setProperty('--y', `${e.clientY - rect.top}px`);
+                    }}
+                    onMouseLeave={() => setHoveredId(null)}
+                    style={{
+                      transform: rotation.to(angle => {
+                        const cardAngle = baseAngle * i + angle;
+                        const x = centerX + radiusX * Math.cos(cardAngle) - 300 / 2; // card width = 300px
+                        const y = centerY + radiusY * Math.sin(cardAngle) - 420 / 2; // card height = 420px
+                        const scale = hoveredId === work.id ? 1.05 : 1.0; // constant scale: no approach on scroll
+                        return `translate3d(${x}px, ${y}px, 0px) scale(${scale})`;
+                      }),
+                      opacity: rotation.to(angle => {
+                        const cardAngle = baseAngle * i + angle;
+                        return 0.2 + 1 * ((Math.sin(cardAngle) + 1) / 2);
+                      }),
+                      zIndex: rotation.to(angle => {
+                        const cardAngle = baseAngle * i + angle;
+                        const depth = (Math.sin(cardAngle) + 1) / 2; // 0..1 used only for stacking order
+                        return hoveredId === work.id ? 10000 : Math.round(50 + depth * 50);
+                      })
+                    }}
+                  >
+                    <ImageWrapper>
+                      <img src={work.image} alt={work.title} loading='lazy' />
+                    </ImageWrapper>
+                    <Content>
+                      <Title>{work.title}</Title>
+                      <Description>{work.description}</Description>
+                    </Content>
+                  </Card>
+                </CardLink>
+              ))}
+            </EllipseContainer>
+          </RevealWrap>
+        ) : (
+          <GridWrapper>
+            {works.map(work => (
+              <a
+                key={work.id}
+                href={work.url}
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label={`Vai al progetto ${work.title}`}
               >
-                <ImageWrapper>
-                  <img src={work.image} alt={work.title} loading='lazy' />
-                </ImageWrapper>
-                <Content>
-                  <Title>{work.title}</Title>
-                  <Description>{work.description}</Description>
-                </Content>
-              </Card>
-            </CardLink>
-          ))}
-        </EllipseContainer>
-      </Container>
-    </>
+                <GridCard
+                  onMouseEnter={e => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty('--x', `${e.clientX - rect.left}px`);
+                    e.currentTarget.style.setProperty('--y', `${e.clientY - rect.top}px`);
+                  }}
+                  onMouseMove={e => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty('--x', `${e.clientX - rect.left}px`);
+                    e.currentTarget.style.setProperty('--y', `${e.clientY - rect.top}px`);
+                  }}
+                >
+                  <GridImageWrapper>
+                    <img src={work.image} alt={work.title} loading='lazy' />
+                  </GridImageWrapper>
+                  <Content>
+                    <Title>{work.title}</Title>
+                    <Description>{work.description}</Description>
+                  </Content>
+                </GridCard>
+              </a>
+            ))}
+          </GridWrapper>
+        ))}
+    </Container>
   );
 };
 

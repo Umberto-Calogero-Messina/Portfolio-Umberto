@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import Navbar from './components/Navbar/Navbar';
 import Preloader from './components/Preloader/Preloader';
 import { PRELOADER_ANIMATION_DURATION, PRELOADER_TEXT_DURATION } from './constants/variables';
 import Presentation from './components/presentation/presentation';
 import Education from './components/Education/Education';
+import Contact from './components/contact/Contact';
 import Footer from './components/Footer/Footer';
 import ParallaxEllipseCards from './components/Parallax/Parallax';
 
+const AppWrap = styled.div``;
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [hideText, setHideText] = useState(false);
@@ -26,15 +28,15 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
+    <AppWrap>
       <Navbar />
       <Presentation />
       <Education />
       <ParallaxEllipseCards />
-      <div className='page-content'>{/* Qui il resto del tuo contenuto */}</div>
+      <Contact></Contact>
       <Footer />
       {isLoading && <Preloader hideText={hideText} hidePreloader={hidePreloader} />}
-    </div>
+    </AppWrap>
   );
 }
 

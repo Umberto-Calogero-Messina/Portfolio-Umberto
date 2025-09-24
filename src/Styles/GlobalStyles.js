@@ -1,8 +1,8 @@
-@import '../styles/colors.css';
+import { createGlobalStyle } from 'styled-components';
 
-
-/* Variabili CSS */
-:root {
+export const GlobalStyles = createGlobalStyle`
+  /* CSS Variables preserved from src/Styles/colors.css */
+  :root {
   --primary-color: #2563eb;
   --secondary-color: #1e40af;
   --accent-color: #3b82f6;
@@ -16,6 +16,7 @@
   /* Background*/
   --color-bg-dark: #0f172a;
   --color-card-grey: #000000;
+  --color-bg-darkblue:#09101A;
   --color-accent: #55e6a5;
   --color-text-dark: #333;
   --color-bg-light: #fff;
@@ -53,3 +54,17 @@
   --transition-normal: 0.3s ease-in-out;
   --transition-slow: 0.5s ease-in-out;
 }
+
+  /* Normalize subset kept from index.css to avoid visual change */
+  *, *::before, *::after { box-sizing: border-box; }
+  img { max-width: 100%; display: block; }
+  ul { list-style: none; padding-left: 0; margin: 0; }
+  a { text-decoration: none; color: inherit; }
+  html { line-height: 1.15; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; font-family: 'Montserrat', Arial, sans-serif; background: var(--color-bg-light, #fff); }
+  input, button, textarea{border:none; 
+    outline: none;}
+
+  /* Utility preserved */
+  .text-large-bold { font-size: clamp(2.5rem, 10vw, 6.25rem); font-weight: bold; color: var(--color-text-dark, #333); margin: 0; position: relative; }
+`;

@@ -1,11 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import './Presentation.scss';
+import { useState, useEffect } from 'react';
 import presentatioImg from '../../assets/images/foto-profilo.png';
+import cvUrl from '../../curriculum/CV-UmbertoCalogeroMessina.pdf';
+import {
+  Section,
+  Container,
+  Content,
+  Eyebrow,
+  Title,
+  Subtitle,
+  Cta,
+  ButtonPrimary,
+  Visual,
+  ImageWrap,
+  Image
+} from './Presentation.styles';
 
 const words = ['Umberto Calogero', 'Front-End Developer', 'Creative', 'Player'];
 const TYPING_SPEED = 150;
 const DELETING_SPEED = 100;
-const PAUSE_TIME = 1000;
+const PAUSE_TIME = 900;
 
 const Presentation = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -14,7 +27,6 @@ const Presentation = () => {
 
   useEffect(() => {
     const currentWord = words[currentWordIndex];
-
     let timeout;
 
     if (!isDeleting) {
@@ -40,33 +52,31 @@ const Presentation = () => {
   }, [displayedText, isDeleting, currentWordIndex]);
 
   return (
-    <section id='home' className='presentatio'>
-      <div className='presentatio__container'>
-        <div className='presentatio__content'>
-          <span className='presentatio__eyebrow'>
-            Hi, I'm <h1 className='presentatio__title'>{displayedText}</h1>
-          </span>
-
-          <p className='presentatio__subtitle'>
+    <Section id='home'>
+      <Container>
+        <Content>
+          <Eyebrow>
+            <span>Hi, I'm</span>
+            <Title>{displayedText}</Title>
+          </Eyebrow>
+          <Subtitle>
             I am a Front-End Web Developer with 8 years of experience in the web and video game industry, specializing
             in system development. I focus on writing clean, scalable, and intuitive code, making collaboration between
             developers easier and ensuring efficient maintenance.
-          </p>
-
-          <div className='presentatio__cta'>
-            <a className='btn btn--primary' href='src/curriculum/CV-UmbertoCalogeroMessina.pdf' download>
+          </Subtitle>
+          <Cta>
+            <ButtonPrimary href={cvUrl} download>
               Download CV
-            </a>
-          </div>
-        </div>
-
-        <div className='presentatio__visual'>
-          <div className='presentatio__image-wrap'>
-            <img src={presentatioImg} alt='presentatio' className='presentatio__image' />
-          </div>
-        </div>
-      </div>
-    </section>
+            </ButtonPrimary>
+          </Cta>
+        </Content>
+        <Visual>
+          <ImageWrap>
+            <Image src={presentatioImg} alt='profile' />
+          </ImageWrap>
+        </Visual>
+      </Container>
+    </Section>
   );
 };
 

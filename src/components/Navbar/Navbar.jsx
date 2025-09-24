@@ -1,47 +1,43 @@
-import React, { useState } from 'react';
-import './Navbar.scss';
+import { useState } from 'react';
 import logo from '../../assets/icons/logo.png';
+import { Nav, Container, Logo, LogoImg, Links, LinkA, Hamburger, HamburgerLine } from './Navbar.styles';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className='navbar'>
-      <div className='navbar__container'>
-        <div className='navbar__logo'>
-          <img src={logo} alt='Logo' className='navbar__logo-img' />
-        </div>
-        <ul className={`navbar__links${open ? ' navbar__links--open' : ''}`}>
+    <Nav>
+      <Container>
+        <Logo>
+          <LogoImg src={logo} alt='Logo' />
+        </Logo>
+        <Links open={open}>
           <li>
-            <a className='navbar__link' href='#home' onClick={() => setOpen(false)}>
+            <LinkA href='#home' onClick={() => setOpen(false)}>
               Home
-            </a>
+            </LinkA>
           </li>
           <li>
-            <a className='navbar__link' href='#about' onClick={() => setOpen(false)}>
+            <LinkA href='#about' onClick={() => setOpen(false)}>
               About
-            </a>
+            </LinkA>
           </li>
           <li>
-            <a className='navbar__link' href='#portfolio' onClick={() => setOpen(false)}>
-              Portfolio
-            </a>
+            <LinkA href='#portfolio' onClick={() => setOpen(false)}>
+              Projects
+            </LinkA>
           </li>
           <li>
-            <a className='navbar__link' href='#contact' onClick={() => setOpen(false)}>
+            <LinkA href='#contact' onClick={() => setOpen(false)}>
               Contact
-            </a>
+            </LinkA>
           </li>
-        </ul>
-        <div
-          className={`navbar__hamburger${open ? ' navbar__hamburger--open' : ''}`}
-          onClick={() => setOpen(!open)}
-          aria-label='Toggle menu'
-        >
-          <span className='navbar__hamburger-line'></span>
-        </div>
-      </div>
-    </nav>
+        </Links>
+        <Hamburger onClick={() => setOpen(!open)} aria-label='Toggle menu'>
+          <HamburgerLine open={open} />
+        </Hamburger>
+      </Container>
+    </Nav>
   );
 };
 

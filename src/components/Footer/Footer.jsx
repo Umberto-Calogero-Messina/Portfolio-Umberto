@@ -1,41 +1,34 @@
 import React from 'react';
-import './Footer.scss';
+import { FooterEl, Inner, Brand, Links, LinkItem, HoverLetters, LetterSpan, Copy } from './Footer.styles';
 
-// Link con animazione delle lettere in hover
 const HoverLettersLink = ({ href, text }) => (
-  <a className='hover-letters' href={href} aria-label={text}>
+  <HoverLetters href={href} aria-label={text}>
     {text.split('').map((ch, i) => (
-      <span
-        key={i}
-        style={{ '--i': i }}
-        data-char={ch === ' ' ? '\u00A0' : ch} // spazio → non-breaking space
-      ></span>
+      <LetterSpan key={i} style={{ '--i': i }} data-char={ch === ' ' ? '\u00A0' : ch} />
     ))}
-  </a>
+  </HoverLetters>
 );
 
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className='footer' id='footer'>
-      <div className='footer-inner'>
-        <div className='footer-brand'>Umberto Portfolio</div>
-
-        <ul className='footer-links'>
-          <li className='footer-link'>
+    <FooterEl id='footer'>
+      <Inner>
+        <Brand>Umberto Portfolio</Brand>
+        <Links>
+          <LinkItem>
             <HoverLettersLink href='#' text='Terms & Conditions' />
-          </li>
-          <li className='footer-link'>
+          </LinkItem>
+          <LinkItem>
             <HoverLettersLink href='#' text='Privacy Policy' />
-          </li>
-          <li className='footer-link'>
+          </LinkItem>
+          <LinkItem>
             <HoverLettersLink href='#' text='Site Map' />
-          </li>
-        </ul>
-
-        <div className='footer-copy'>© {year} Umberto. All rights reserved.</div>
-      </div>
-    </footer>
+          </LinkItem>
+        </Links>
+        <Copy>© {year} Umberto. All rights reserved.</Copy>
+      </Inner>
+    </FooterEl>
   );
 };
 

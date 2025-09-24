@@ -1,5 +1,21 @@
-import React from 'react';
-import './Education.scss';
+import useRevealOnScroll from '../../hooks/useRevealOnScroll';
+import {
+  Section,
+  Title,
+  Subtitle,
+  Grid,
+  Item,
+  ItemTitle,
+  ItemDesc,
+  ItemSub,
+  SkillsGrid,
+  SkillCard,
+  SkillHeader,
+  SkillIcon,
+  SkillName,
+  Bar,
+  BarFill
+} from './Education.styles';
 
 const EducationItems = [
   {
@@ -40,35 +56,44 @@ const SkillsItems = [
 ];
 
 const Education = () => {
+  const titleReveal = useRevealOnScroll();
+  const subtitleReveal = useRevealOnScroll();
+  const gridReveal = useRevealOnScroll();
+  const skillsReveal = useRevealOnScroll();
+
   return (
-    <div className='education'>
-      <h3 className='education-title'>Education & skill</h3>
-      <h1 className='education-subtitle'>Showcasing your talent amplifying your impact</h1>
-      <div className='portfolio-grid'>
-        {EducationItems.map(({ id, title, description, subtitle }) => (
-          <div key={id} className='portfolio-item'>
-            <h3 className='portfolio-title'>{title}</h3>
-            <p className='portfolio-description'>{description}</p>
-            <p className='portfolio-subtitle'>{subtitle}</p>
-          </div>
+    <Section id='about'>
+      <Title ref={titleReveal.ref} $revealed={titleReveal.isVisible}>
+        Education & skill
+      </Title>
+      <Subtitle ref={subtitleReveal.ref} $revealed={subtitleReveal.isVisible}>
+        Showcasing your talent amplifying your impact
+      </Subtitle>
+
+      <Grid ref={gridReveal.ref}>
+        {EducationItems.map(({ id, title, description, subtitle }, idx) => (
+          <Item key={id} $revealed={gridReveal.isVisible} $delay={idx * 90} $dir={idx % 2 === 0 ? 'left' : 'right'}>
+            <ItemTitle>{title}</ItemTitle>
+            <ItemDesc>{description}</ItemDesc>
+            <ItemSub>{subtitle}</ItemSub>
+          </Item>
         ))}
-      </div>
-      <div className='skills'>
-        <div className='skills-grid'>
-          {SkillsItems.map(({ id, name, score, icon }) => (
-            <div key={id} className='skill-card'>
-              <div className='skill-header'>
-                <img className='skill-icon-img' src={`./src/assets/icons/${icon}.png`} alt={`${name} icon`} />
-                <span className='skill-name'>{name}</span>
-              </div>
-              <div className='skill-bar' role='progressbar' aria-valuemin={0} aria-valuemax={100} aria-valuenow={score}>
-                <div className='skill-bar-fill' style={{ width: `${score}%` }} />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+      </Grid>
+
+      <SkillsGrid ref={skillsReveal.ref}>
+        {SkillsItems.map(({ id, name, score, icon }, idx) => (
+          <SkillCard key={id} $revealed={skillsReveal.isVisible} $delay={idx * 90}>
+            <SkillHeader>
+              <SkillIcon src={`./src/assets/icons/${icon}.png`} alt={`${name} icon`} />
+              <SkillName>{name}</SkillName>
+            </SkillHeader>
+            <Bar role='progressbar' aria-valuemin={0} aria-valuemax={100} aria-valuenow={score}>
+              <BarFill $width={skillsReveal.isVisible ? score : 0} />
+            </Bar>
+          </SkillCard>
+        ))}
+      </SkillsGrid>
+    </Section>
   );
 };
 
