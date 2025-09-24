@@ -3,7 +3,7 @@ import { mq } from '../../Styles/styledSystem';
 
 // Main container
 export const ContactContainer = styled.section`
-    height: 750px;
+    height: 950px;
     background-color: var(--color-bg-dark);
     display: flex;
     align-items: center;
@@ -14,6 +14,8 @@ export const ContactContainer = styled.section`
   }
   
   ${mq.laptop} {
+    height: 750px;
+     padding-bottom:0px;
   }
 `;
 
@@ -33,8 +35,10 @@ export const ContactTitle = styled.h1`
     font-weight: 600;
     text-align: center;
     color: var(--color-bg-light);
+    margin-bottom:50px;
   
-    ${mq.tablet} {
+    ${mq.laptop} {
+      margin-bottom:100px;
     }
 `;
 
@@ -67,8 +71,11 @@ export const Subtitle = styled.h2`
     font-size: 25px;
     line-height: 1.3;
     color: var(--color-bg-light);
+    padding-inline:40px;
+    text-align:center;
   
   ${mq.tablet} {
+     padding-inline:80px;
   }
 `;
 
@@ -77,13 +84,14 @@ export const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   margin-bottom: 30px;
 `;
 
 // Individual contact item
 export const ContactItem = styled.div`
-    width:220px;
+    width:160px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -156,9 +164,16 @@ export const SocialIcon = styled.img`
 // Right section - Contact form
 export const FormRightSection = styled.div`
   flex: 1;
+  width:90%;
+  margin-inline:auto;
   padding-block:20px;
   
+  ${mq.tablet} {
+    
+  }
+
   ${mq.laptop} {
+    padding-inline:50px;
   }
 `;
 

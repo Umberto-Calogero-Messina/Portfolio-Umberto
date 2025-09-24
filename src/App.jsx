@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Navbar from './components/Navbar/Navbar';
 import Preloader from './components/Preloader/Preloader';
 import { PRELOADER_ANIMATION_DURATION, PRELOADER_TEXT_DURATION } from './constants/variables';
-import Presentation from './components/presentation/presentation';
+import Presentation from './components/presentation/Presentation';
 import Education from './components/Education/Education';
 import Contact from './components/contact/Contact';
 import Footer from './components/Footer/Footer';

@@ -55,6 +55,22 @@ const SkillsItems = [
   { id: 6, name: 'C++', score: 50, icon: 'c++' }
 ];
 
+import htmlIcon from '../../assets/icons/html.png';
+import cssIcon from '../../assets/icons/css.png';
+import jsIcon from '../../assets/icons/javascript.png';
+import pythonIcon from '../../assets/icons/python.png';
+import photoshopIcon from '../../assets/icons/photoshop.png';
+import cppIcon from '../../assets/icons/c++.png';
+
+const icons = {
+  html: htmlIcon,
+  css: cssIcon,
+  javascript: jsIcon,
+  python: pythonIcon,
+  photoshop: photoshopIcon,
+  'c++': cppIcon
+};
+
 const Education = () => {
   const titleReveal = useRevealOnScroll();
   const subtitleReveal = useRevealOnScroll();
@@ -84,7 +100,7 @@ const Education = () => {
         {SkillsItems.map(({ id, name, score, icon }, idx) => (
           <SkillCard key={id} $revealed={skillsReveal.isVisible} $delay={idx * 90}>
             <SkillHeader>
-              <SkillIcon src={`./src/assets/icons/${icon}.png`} alt={`${name} icon`} />
+              <SkillIcon src={icons[icon]} alt={`${name} icon`} />
               <SkillName>{name}</SkillName>
             </SkillHeader>
             <Bar role='progressbar' aria-valuemin={0} aria-valuemax={100} aria-valuenow={score}>

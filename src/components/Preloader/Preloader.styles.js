@@ -10,7 +10,7 @@ export const PreloaderWrap = styled.div`
   justify-content: center;
   transition: transform 0.7s;
   opacity: 1;
-  transform: translateY(${p => (p.hide ? '-100vh' : '0')});
+  transform: translateY(${p => (p.$hide ? '-100vh' : '0')});
 `;
 
 const move = keyframes`

@@ -25,6 +25,14 @@ import {
   SuccessMessage
 } from './Contact.styles';
 
+import githubIcon from '@/assets/icons/github.png';
+import linkedinIcon from '@/assets/icons/linkedin.png';
+import whatsappIcon from '@/assets/icons/whatsapp.png';
+
+import emailIcon from '@/assets/icons/email.png';
+import phoneIcon from '@/assets/icons/phone.png';
+import mapIcon from '@/assets/icons/map.png';
+
 // EmailJS configuration from environment variables (Vite)
 // Fill these in .env.local
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -158,33 +166,33 @@ const Contact = () => {
 
             <ContactInfo>
               <ContactItem>
-                <ContactIcon src='src/assets/icons/email.png' alt='Email' />
+                <ContactIcon src={emailIcon} alt='Email' />
                 <ContactText>ucmessina@gmail.com</ContactText>
               </ContactItem>
 
               <ContactItem>
-                <ContactIcon src='src/assets/icons/phone.png' alt='Phone' />
-                <ContactText>+1 234 567 8900</ContactText>
+                <ContactIcon src={phoneIcon} alt='Phone' />
+                <ContactText>+34 647 14 08 18</ContactText>
               </ContactItem>
 
               <ContactItem>
-                <ContactIcon src='src/assets/icons/map.png' alt='Location' />
-                <ContactText>City, Country</ContactText>
+                <ContactIcon src={mapIcon} alt='Location' />
+                <ContactText>Madrid, Spain</ContactText>
               </ContactItem>
             </ContactInfo>
 
             <SocialSection>
               <SocialIcons>
                 <SocialIconLink href='https://github.com/yourprofile' target='_blank' rel='noopener noreferrer'>
-                  <SocialIcon src='src/assets/icons/github.png' alt='GitHub' />
+                  <SocialIcon src={githubIcon} alt='GitHub' />
                 </SocialIconLink>
 
                 <SocialIconLink href='https://linkedin.com/in/yourprofile' target='_blank' rel='noopener noreferrer'>
-                  <SocialIcon src='src/assets/icons/linkedin.png' alt='LinkedIn' />
+                  <SocialIcon src={linkedinIcon} alt='LinkedIn' />
                 </SocialIconLink>
 
                 <SocialIconLink href='https://wa.me/yourwhatsappnumber' target='_blank' rel='noopener noreferrer'>
-                  <SocialIcon src='src/assets/icons/whatsapp.png' alt='WhatsApp' />
+                  <SocialIcon src={whatsappIcon} alt='WhatsApp' />
                 </SocialIconLink>
               </SocialIcons>
             </SocialSection>

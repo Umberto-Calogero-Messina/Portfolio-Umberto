@@ -262,7 +262,7 @@ const ParallaxEllipseCards = () => {
                   onClick={preventNavigationIfDragging}
                 >
                   <Card
-                    zIndex={hoveredId === work.id ? 10000 : undefined}
+                    $zIndex={hoveredId === work.id ? 10000 : undefined}
                     onMouseEnter={e => {
                       const rect = e.currentTarget.getBoundingClientRect();
                       e.currentTarget.style.setProperty('--x', `${e.clientX - rect.left}px`);
