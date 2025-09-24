@@ -51,8 +51,6 @@ export const Grid = styled.div`
 export const Item = styled.div`
   padding-inline: 16px;
   opacity: ${p => (p.$revealed ? 1 : 0)};
-  transform: translateY(${p => (p.$revealed ? '0' : '24px')}) translateX(${p => (p.$dir === 'left' ? '-16px' : p.$dir === 'right' ? '16px' : '0')});
-  transition: opacity var(--transition-normal) ${p => p.$delay}ms, transform var(--transition-normal) ${p => p.$delay}ms;
 `;
 
 export const ItemTitle = styled.h3`
