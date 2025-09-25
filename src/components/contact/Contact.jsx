@@ -35,9 +35,10 @@ import mapIcon from '@/assets/icons/map.png';
 
 // EmailJS configuration from environment variables (Vite)
 // Fill these in .env.local
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+const PUBLIC_KEY = '5LRWbDj8yR2dZ4tBN';
+const SERVICE_ID = 'service_69mhp4o';
+const TEMPLATE_ID = 'template_9c0yd21';
 
 // Your recipient email, because your template uses To Email = {{email}}
 // We pass this variable so EmailJS knows where to send
