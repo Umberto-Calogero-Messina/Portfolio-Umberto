@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { mq } from '../../Styles/styledSystem';
 
 export const Section = styled.section`
-  padding-block: 50px 150px;
+  padding-block: 80px 150px;
   padding-inline: 32px;
   background-color: var(--color-bg-dark);
 `;

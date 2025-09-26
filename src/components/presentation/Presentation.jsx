@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import presentatioImg from '../../assets/images/foto-profilo.png';
 import cvUrl from '../../curriculum/CV-UmbertoCalogeroMessina.pdf';
+import ScrollDownArrow from '../ScrollDownArrow/ScrollDownArrow';
 import {
   Section,
   Container,
@@ -20,7 +21,7 @@ const TYPING_SPEED = 150;
 const DELETING_SPEED = 100;
 const PAUSE_TIME = 900;
 
-const Presentation = () => {
+const Presentation = ({ isLoading = false }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -76,6 +77,7 @@ const Presentation = () => {
           </ImageWrap>
         </Visual>
       </Container>
+      <ScrollDownArrow isLoading={isLoading} />
     </Section>
   );
 };

@@ -8,6 +8,7 @@ import Education from './components/Education/Education';
 import Contact from './components/contact/Contact';
 import Footer from './components/Footer/Footer';
 import ParallaxEllipseCards from './components/Parallax/Parallax';
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
 
 const AppWrap = styled.div``;
 function App() {
@@ -30,11 +31,12 @@ function App() {
   return (
     <AppWrap>
       <Navbar />
-      <Presentation />
+      <Presentation isLoading={isLoading} />
       <Education />
       <ParallaxEllipseCards />
       <Contact></Contact>
       <Footer />
+      <ScrollToTopButton />
       {isLoading && <Preloader hideText={hideText} hidePreloader={hidePreloader} />}
     </AppWrap>
   );

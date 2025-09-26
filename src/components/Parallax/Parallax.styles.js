@@ -2,13 +2,12 @@ import styled from 'styled-components';
 import { mq } from '../../Styles/styledSystem';
 
 export const Container = styled.section`
-    padding: 60px 16px 80px;
+    padding: 80px 16px 80px;
     overflow: visible;
     background-color: var(--color-bg-darkblue);
     position: relative;
 
 ${mq.tablet} { 
-  padding: 0;
   overflow: hidden;
 
  }
@@ -17,8 +16,12 @@ ${mq.tablet} {
 export const Heading = styled.h2`
   text-align: center;
   font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 20px;
+  margin-bottom: 70px;
   color: var(--color-bg-light);
+  ${mq.laptop} { 
+   margin-bottom: 0px;
+
+ }
 `;
 
 export const RevealWrap = styled.div`
