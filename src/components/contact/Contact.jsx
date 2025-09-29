@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { useLanguage } from '../../contexts/LanguageContext';
 import {
   ContactContainer,
   ContactCont,
@@ -45,6 +46,7 @@ const TEMPLATE_ID = 'template_9c0yd21';
 const TO_EMAIL = 'ucmessina@gmail.com';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -82,7 +84,7 @@ const Contact = () => {
     if (name === 'message' && detectMaliciousContent(value)) {
       setErrors(prev => ({
         ...prev,
-        message: 'Message contains suspicious content.'
+        message: t('contact.securityViolation')
       }));
       return;
     } else {
@@ -101,13 +103,13 @@ const Contact = () => {
 
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
-      setErrors({ submit: 'Please fill all required fields.' });
+      setErrors({ submit: t('contact.fillAllFields') });
       return;
     }
 
     // Security validation
     if (detectMaliciousContent(formData.message)) {
-      setErrors({ message: 'Security violation detected.' });
+      setErrors({ message: t('contact.securityViolation') });
       return;
     }
 
@@ -149,7 +151,7 @@ const Contact = () => {
       console.error('Email sending error:', error);
       const reason = error?.text || error?.message || `status: ${error?.status}`;
       setErrors({
-        submit: `Failed to send message: ${reason}`
+        submit: `${t('contact.messageError')} ${reason}`
       });
     } finally {
       setIsLoading(false);
@@ -159,26 +161,26 @@ const Contact = () => {
   return (
     <ContactContainer id='contact'>
       <ContactCont>
-        <ContactTitle>Get in Touch</ContactTitle>
+        <ContactTitle>{t('contact.title')}</ContactTitle>
 
         <ContentWrapper>
           <LeftSection>
-            <Subtitle>Let's work together! Feel free to reach out for collaborations or just to say hello.</Subtitle>
+            <Subtitle>{t('contact.subtitle')}</Subtitle>
 
             <ContactInfo>
               <ContactItem>
                 <ContactIcon src={emailIcon} alt='Email' />
-                <ContactText>ucmessina@gmail.com</ContactText>
+                <ContactText>ucmessina@gmail.com</ContactText> {/* Email is likely static */}
               </ContactItem>
 
               <ContactItem>
                 <ContactIcon src={phoneIcon} alt='Phone' />
-                <ContactText>+34 647 14 08 18</ContactText>
+                <ContactText>{t('contact.phone')}</ContactText>
               </ContactItem>
 
               <ContactItem>
                 <ContactIcon src={mapIcon} alt='Location' />
-                <ContactText>Madrid, Spain</ContactText>
+                <ContactText>{t('contact.location')}</ContactText>
               </ContactItem>
             </ContactInfo>
 
@@ -205,7 +207,7 @@ const Contact = () => {
                 <FormInput
                   type='text'
                   name='name'
-                  placeholder='Your Name'
+                  placeholder={t('contact.name')}
                   value={formData.name}
                   onChange={handleInputChange}
                   onKeyPress={validateNameInput}
@@ -217,7 +219,7 @@ const Contact = () => {
                 <FormInput
                   type='email'
                   name='email'
-                  placeholder='Your Email'
+                  placeholder={t('contact.email')}
                   value={formData.email}
                   onChange={handleInputChange}
                   required
@@ -227,7 +229,7 @@ const Contact = () => {
               <FormGroup>
                 <FormTextarea
                   name='message'
-                  placeholder='Your Message'
+                  placeholder={t('contact.message')}
                   rows='5'
                   value={formData.message}
                   onChange={handleInputChange}
@@ -236,11 +238,11 @@ const Contact = () => {
                 {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
               </FormGroup>
 
-              {isSent && <SuccessMessage>✅ Message sent successfully!</SuccessMessage>}
+              {isSent && <SuccessMessage>{t('contact.messageSent')}</SuccessMessage>}
               {errors.submit && <ErrorMessage>❌ {errors.submit}</ErrorMessage>}
 
               <SubmitButton type='submit' disabled={!!errors.message || isLoading}>
-                {isLoading ? 'SENDING...' : 'SEND MESSAGE'}
+                {isLoading ? t('contact.sending') : t('contact.sendMessage')}
               </SubmitButton>
             </ContactForm>
           </FormRightSection>

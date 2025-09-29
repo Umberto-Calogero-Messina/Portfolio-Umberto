@@ -1,3 +1,4 @@
+import { useLanguage } from '../../contexts/LanguageContext';
 import useRevealOnScroll from '../../hooks/useRevealOnScroll';
 import {
   Section,
@@ -16,35 +17,6 @@ import {
   Bar,
   BarFill
 } from './Education.styles';
-
-const EducationItems = [
-  {
-    id: 1,
-    title: '2014 - 2018',
-    description: 'Short description of project 1.',
-    subtitle:
-      'Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit.dolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipisc'
-  },
-  {
-    id: 2,
-    title: '2012 - 2014',
-    description: 'Short description of project 2.',
-    subtitle:
-      'Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit.dolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipisc'
-  },
-  {
-    id: 3,
-    title: '2012 - 2014',
-    description: 'Short description of project 2.',
-    subtitle: 'Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-  },
-  {
-    id: 4,
-    title: '2012 - 2014',
-    description: 'Short description of project 2.',
-    subtitle: 'Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-  }
-];
 
 const SkillsItems = [
   { id: 1, name: 'HTML', score: 90, icon: 'html' },
@@ -76,19 +48,23 @@ const Education = () => {
   const subtitleReveal = useRevealOnScroll();
   const gridReveal = useRevealOnScroll();
   const skillsReveal = useRevealOnScroll();
+  const { t } = useLanguage();
+
+  // Recupera gli items tradotti dal contesto
+  const educationItems = t('education.items', { returnObjects: true }) || [];
 
   return (
     <Section id='about'>
       <Title ref={titleReveal.ref} $revealed={titleReveal.isVisible}>
-        Education & skill
+        {t('education.title')}
       </Title>
       <Subtitle ref={subtitleReveal.ref} $revealed={subtitleReveal.isVisible}>
-        Showcasing your talent amplifying your impact
+        {t('education.subtitle')}
       </Subtitle>
 
       <Grid ref={gridReveal.ref}>
-        {EducationItems.map(({ id, title, description, subtitle }, idx) => (
-          <Item key={id} $revealed={gridReveal.isVisible} $delay={idx * 90} $dir={idx % 2 === 0 ? 'left' : 'right'}>
+        {educationItems.map(({ title, description, subtitle }, idx) => (
+          <Item key={idx} $revealed={gridReveal.isVisible} $delay={idx * 90} $dir={idx % 2 === 0 ? 'left' : 'right'}>
             <ItemTitle>{title}</ItemTitle>
             <ItemDesc>{description}</ItemDesc>
             <ItemSub>{subtitle}</ItemSub>

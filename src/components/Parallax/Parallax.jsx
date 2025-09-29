@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { useSpring, animated } from 'react-spring';
 import useRevealOnScroll from '../../hooks/useRevealOnScroll';
+import { useLanguage } from '../../contexts/LanguageContext';
 import useInViewport from '../../hooks/useInViewport';
 import {
   Container,
@@ -18,51 +19,39 @@ import {
   GridImageWrapper
 } from './Parallax.styles';
 
-const works = [
+const staticWorksData = [
   {
     id: 1,
-    title: 'Progetto 1',
-    description: 'Descrizione progetto 1',
     color: 'var(--color-primary)',
     image: 'https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=400&q=80',
     url: 'https://unsplash.com/photos/1'
   },
   {
     id: 2,
-    title: 'Progetto 2',
-    description: 'Descrizione progetto 2',
     color: 'var(--color-accent)',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80',
     url: 'https://unsplash.com/photos/2'
   },
   {
     id: 3,
-    title: 'Progetto 3',
-    description: 'Descrizione progetto 3',
     color: 'var(--color-secondary)',
     image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80',
     url: 'https://unsplash.com/photos/3'
   },
   {
     id: 4,
-    title: 'Progetto 4',
-    description: 'Descrizione progetto 4',
     color: 'var(--color-primary)',
     image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
     url: 'https://unsplash.com/photos/4'
   },
   {
     id: 5,
-    title: 'Progetto 5',
-    description: 'Descrizione progetto 5',
     color: 'var(--color-accent)',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80',
     url: 'https://unsplash.com/photos/5'
   },
   {
     id: 6,
-    title: 'Progetto 5',
-    description: 'Descrizione progetto 5',
     color: 'var(--color-accent)',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80',
     url: 'https://unsplash.com/photos/5'
@@ -72,6 +61,7 @@ const works = [
 // moved styles to Parallax.styles.js
 
 const ParallaxEllipseCards = () => {
+  const { t } = useLanguage();
   // UI state
   const [scrollY, setScrollY] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -108,6 +98,16 @@ const ParallaxEllipseCards = () => {
   const radiusX = Math.min(500, Math.max(0, (windowWidth - H_PADDING - CARD_W) / 2));
   // keep within ellipse container vertically and slightly flatten for aesthetics
   const radiusY = 100;
+
+  const translatedWorks = t('portfolio.items', { returnObjects: true }) || [];
+  const works = useMemo(
+    () =>
+      staticWorksData.map((work, index) => ({
+        ...work,
+        ...(translatedWorks[index] || { title: `Progetto ${index + 1}`, description: 'Caricamento...' })
+      })),
+    [translatedWorks]
+  );
   const baseAngle = (2 * Math.PI) / works.length;
 
   // tuning
@@ -245,7 +245,7 @@ const ParallaxEllipseCards = () => {
       }}
     >
       <RevealWrap $revealed={reveal.isVisible}>
-        <Heading>I miei lavori</Heading>
+        <Heading>{t('portfolio.title')}</Heading>
       </RevealWrap>
 
       {reveal.isVisible &&

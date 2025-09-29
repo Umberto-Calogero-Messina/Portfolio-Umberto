@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../../contexts/LanguageContext';
 import presentatioImg from '../../assets/images/foto-profilo.png';
 import cvUrl from '../../curriculum/CV-UmbertoCalogeroMessina.pdf';
 import ScrollDownArrow from '../ScrollDownArrow/ScrollDownArrow';
@@ -16,15 +17,17 @@ import {
   Image
 } from './Presentation.styles';
 
-const words = ['Umberto Calogero', 'Front-End Developer', 'Creative', 'Player'];
 const TYPING_SPEED = 150;
 const DELETING_SPEED = 100;
 const PAUSE_TIME = 900;
 
 const Presentation = ({ isLoading = false }) => {
+  const { t } = useLanguage();
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+
+  const words = t('presentation.roles', { returnObjects: true }) || [];
 
   useEffect(() => {
     const currentWord = words[currentWordIndex];
@@ -57,17 +60,13 @@ const Presentation = ({ isLoading = false }) => {
       <Container>
         <Content>
           <Eyebrow>
-            <span>Hi, I'm</span>
+            <span>{t('presentation.greeting')}</span>
             <Title>{displayedText}</Title>
           </Eyebrow>
-          <Subtitle>
-            I am a Front-End Web Developer with 8 years of experience in the web and video game industry, specializing
-            in system development. I focus on writing clean, scalable, and intuitive code, making collaboration between
-            developers easier and ensuring efficient maintenance.
-          </Subtitle>
+          <Subtitle>{t('presentation.description')}</Subtitle>
           <Cta>
             <ButtonPrimary href={cvUrl} download>
-              Download CV
+              {t('presentation.downloadCV')}
             </ButtonPrimary>
           </Cta>
         </Content>

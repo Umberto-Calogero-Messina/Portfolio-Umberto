@@ -1,0 +1,90 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "presentation": {
+    "greeting": "Hola, soy",
+    "description": "Soy un Desarrollador Web Front-End con 8 años de experiencia en la industria web y de videojuegos, especializado en el desarrollo de sistemas. Me enfoco en escribir código limpio, escalable e intuitivo, facilitando la colaboración entre desarrolladores y garantizando un mantenimiento eficiente.",
+    "downloadCV": "Descargar CV",
+    "roles": ["Umberto Calogero", "Desarrollador Front-End", "Creativo", "Jugador"]
+  },
+  "education": {
+    "title": "Educación y habilidades",
+    "subtitle": "Mostrando tu talento amplificando tu impacto",
+    "items": [
+      {
+        "title": "2014 - 2018",
+        "description": "Breve descripción del proyecto 1.",
+        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit.dolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipisc"
+      },
+      {
+        "title": "2012 - 2014",
+        "description": "Breve descripción del proyecto 2.",
+        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit.dolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipisc"
+      },
+      {
+        "title": "2012 - 2014",
+        "description": "Breve descripción del proyecto 2.",
+        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "2012 - 2014",
+        "description": "Breve descripción del proyecto 2.",
+        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Mis trabajos",
+    "items": [
+      {
+        "title": "Proyecto 1",
+        "description": "Descripción del proyecto 1"
+      },
+      {
+        "title": "Proyecto 2",
+        "description": "Descripción del proyecto 2"
+      },
+      {
+        "title": "Proyecto 3",
+        "description": "Descripción del proyecto 3"
+      },
+      {
+        "title": "Proyecto 4",
+        "description": "Descripción del proyecto 4"
+      },
+      { "title": "Proyecto 5", "description": "Descripción del proyecto 5" },
+      { "title": "Proyecto 6", "description": "Descripción del proyecto 6" }
+    ]
+  },
+  "contact": {
+    "title": "Ponte en contacto",
+    "subtitle": "¡Trabajemos juntos! No dudes en contactarme para colaboraciones o simplemente para saludar.",
+    "name": "Tu Nombre",
+    "email": "Tu Email",
+    "message": "Tu Mensaje",
+    "sendMessage": "ENVIAR MENSAJE",
+    "sending": "ENVIANDO...",
+    "messageSent": "✅ Mensaje enviado con éxito!",
+    "messageError": "❌ Error al enviar mensaje:",
+    "fillAllFields": "Por favor complete todos los campos obligatorios.",
+    "securityViolation": "Violación de seguridad detectada.",
+    "location": "Madrid, España",
+    "phone": "+34 647 14 08 18"
+  },
+  "footer": {
+    "allRightsReserved": "Todos los derechos reservados.",
+    "terms": "Términos y Condiciones",
+    "privacy": "Política de Privacidad",
+    "sitemap": "Mapa del Sitio"
+  },
+  "languages": {
+    "italian": "Italiano",
+    "spanish": "Español",
+    "english": "Inglés",
+    "portuguese": "Portugués"
+  }
+}

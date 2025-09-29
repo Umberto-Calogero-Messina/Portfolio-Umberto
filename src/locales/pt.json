@@ -1,0 +1,90 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre Mim",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "presentation": {
+    "greeting": "Olá, eu sou",
+    "description": "Sou um Desenvolvedor Web Front-End com 8 anos de experiência na indústria web e de videojogos, especializado no desenvolvimento de sistemas. Foco-me em escrever código limpo, escalável e intuitivo, facilitando a colaboração entre desenvolvedores e garantindo uma manutenção eficiente.",
+    "downloadCV": "Baixar CV",
+    "roles": ["Umberto Calogero", "Desenvolvedor Front-End", "Criativo", "Jogador"]
+  },
+  "education": {
+    "title": "Educação e competências",
+    "subtitle": "Mostrando seu talento, amplificando seu impacto",
+    "items": [
+      {
+        "title": "2014 - 2018",
+        "description": "Breve descrição do projeto 1.",
+        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit.dolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipisc"
+      },
+      {
+        "title": "2012 - 2014",
+        "description": "Breve descrição do projeto 2.",
+        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit.dolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipisc"
+      },
+      {
+        "title": "2012 - 2014",
+        "description": "Breve descrição do projeto 2.",
+        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "2012 - 2014",
+        "description": "Breve descrição do projeto 2.",
+        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Meus trabalhos",
+    "items": [
+      {
+        "title": "Projeto 1",
+        "description": "Descrição do projeto 1"
+      },
+      {
+        "title": "Projeto 2",
+        "description": "Descrição do projeto 2"
+      },
+      {
+        "title": "Projeto 3",
+        "description": "Descrição do projeto 3"
+      },
+      {
+        "title": "Projeto 4",
+        "description": "Descrição do projeto 4"
+      },
+      { "title": "Projeto 5", "description": "Descrição do projeto 5" },
+      { "title": "Projeto 6", "description": "Descrição do projeto 6" }
+    ]
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "subtitle": "Vamos trabalhar juntos! Sinta-se à vontade para me contatar para colaborações ou apenas para dizer olá.",
+    "name": "Seu Nome",
+    "email": "Seu Email",
+    "message": "Sua Mensagem",
+    "sendMessage": "ENVIAR MENSAGEM",
+    "sending": "ENVIANDO...",
+    "messageSent": "✅ Mensagem enviada com sucesso!",
+    "messageError": "❌ Falha ao enviar mensagem:",
+    "fillAllFields": "Por favor, preencha todos os campos obrigatórios.",
+    "securityViolation": "Violação de segurança detectada.",
+    "location": "Madrid, Espanha",
+    "phone": "+34 647 14 08 18"
+  },
+  "footer": {
+    "allRightsReserved": "Todos os direitos reservados.",
+    "terms": "Termos e Condições",
+    "privacy": "Política de Privacidade",
+    "sitemap": "Mapa do Site"
+  },
+  "languages": {
+    "italian": "Italiano",
+    "spanish": "Espanhol",
+    "english": "Inglês",
+    "portuguese": "Português"
+  }
+}

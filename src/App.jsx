@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar/Navbar';
 import Preloader from './components/Preloader/Preloader';
 import { PRELOADER_ANIMATION_DURATION, PRELOADER_TEXT_DURATION } from './constants/variables';
@@ -29,16 +30,18 @@ function App() {
   }, []);
 
   return (
-    <AppWrap>
-      <Navbar />
-      <Presentation isLoading={isLoading} />
-      <Education />
-      <ParallaxEllipseCards />
-      <Contact></Contact>
-      <Footer />
-      <ScrollToTopButton />
-      {isLoading && <Preloader hideText={hideText} hidePreloader={hidePreloader} />}
-    </AppWrap>
+    <LanguageProvider>
+      <AppWrap>
+        <Navbar />
+        <Presentation isLoading={isLoading} />
+        <Education />
+        <ParallaxEllipseCards />
+        <Contact />
+        <Footer />
+        <ScrollToTopButton />
+        {isLoading && <Preloader hideText={hideText} hidePreloader={hidePreloader} />}
+      </AppWrap>
+    </LanguageProvider>
   );
 }
 

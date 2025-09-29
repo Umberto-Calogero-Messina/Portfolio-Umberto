@@ -1,5 +1,6 @@
 import React from 'react';
 import { FooterEl, Inner, Brand, Links, LinkItem, HoverLetters, LetterSpan, Copy } from './Footer.styles';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const HoverLettersLink = ({ href, text }) => (
   <HoverLetters href={href} aria-label={text}>
@@ -10,6 +11,7 @@ const HoverLettersLink = ({ href, text }) => (
 );
 
 const Footer = () => {
+  const { t } = useLanguage();
   const year = new Date().getFullYear();
   return (
     <FooterEl id='footer'>
@@ -17,16 +19,18 @@ const Footer = () => {
         <Brand>Umberto Portfolio</Brand>
         <Links>
           <LinkItem>
-            <HoverLettersLink href='#' text='Terms & Conditions' />
+            <HoverLettersLink href='#' text={t('footer.terms', 'Terms & Conditions')} />
           </LinkItem>
           <LinkItem>
-            <HoverLettersLink href='#' text='Privacy Policy' />
+            <HoverLettersLink href='#' text={t('footer.privacy', 'Privacy Policy')} />
           </LinkItem>
           <LinkItem>
-            <HoverLettersLink href='#' text='Site Map' />
+            <HoverLettersLink href='#' text={t('footer.sitemap', 'Site Map')} />
           </LinkItem>
         </Links>
-        <Copy>© {year} Umberto. All rights reserved.</Copy>
+        <Copy>
+          © {year} Umberto. {t('footer.allRightsReserved')}
+        </Copy>
       </Inner>
     </FooterEl>
   );
