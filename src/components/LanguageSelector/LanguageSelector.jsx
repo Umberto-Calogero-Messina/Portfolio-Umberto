@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
+  LanguageDiv,
   LanguageButton,
   LanguageDropdown,
   LanguageItem,
@@ -25,9 +26,9 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div style={{ position: 'relative' }}>
+    <LanguageDiv>
       <LanguageButton onClick={toggleDropdown} $isOpen={isOpen}>
-        <Flag>{currentLang?.flag}</Flag>
+        <Flag src={currentLang?.flag} alt={currentLang?.name} />
         <LanguageName>{currentLang?.name}</LanguageName>
         <ChevronIcon $isOpen={isOpen}>▼</ChevronIcon>
       </LanguageButton>
@@ -39,12 +40,12 @@ const LanguageSelector = () => {
             onClick={() => handleLanguageChange(language.code)}
             $isActive={language.code === currentLanguage}
           >
-            <Flag>{language.flag}</Flag>
+            <Flag src={language.flag} alt={language.name} />
             <LanguageName>{language.name}</LanguageName>
           </LanguageItem>
         ))}
       </LanguageDropdown>
-    </div>
+    </LanguageDiv>
   );
 };
 

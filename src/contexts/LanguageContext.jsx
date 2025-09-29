@@ -4,6 +4,11 @@ import it from '../locales/it.json';
 import es from '../locales/es.json';
 import pt from '../locales/pt.json';
 
+import flagIt from '../assets/icons/it.svg';
+import flagEs from '../assets/icons/es.svg';
+import flagEn from '../assets/icons/en.svg';
+import flagPt from '../assets/icons/pt.svg';
+
 const translations = { en, it, es, pt };
 
 const LanguageContext = createContext();
@@ -50,10 +55,10 @@ export const LanguageProvider = ({ children }) => {
     changeLanguage,
     t,
     availableLanguages: [
-      { code: 'it', name: 'Italiano', flag: '🇮🇹' },
-      { code: 'es', name: 'Español', flag: '🇪🇸' },
-      { code: 'en', name: 'English', flag: '🇺🇸' },
-      { code: 'pt', name: 'Português', flag: '🇵🇹' }
+      { code: 'it', name: 'Italiano', flag: flagIt },
+      { code: 'es', name: 'Español', flag: flagEs },
+      { code: 'en', name: 'English', flag: flagEn },
+      { code: 'pt', name: 'Português', flag: flagPt }
     ]
   };
 

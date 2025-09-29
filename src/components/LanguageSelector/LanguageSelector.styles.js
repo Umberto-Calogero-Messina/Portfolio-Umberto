@@ -1,4 +1,19 @@
 import styled, { css } from 'styled-components';
+import { mq } from '../../Styles/styledSystem';
+
+export const LanguageDiv = styled.div`
+  position: relative;
+  padding:4px 24px;
+
+  ${mq.tablet} {
+   padding:4px 48px;
+  }
+
+  ${mq.laptop} {
+   right:0;
+   padding:0;
+  }
+`;
 
 export const LanguageButton = styled.button`
   display: flex;
@@ -7,7 +22,9 @@ export const LanguageButton = styled.button`
   background-color: transparent;
   border: 1px solid #4a5568; /* Grigio scuro */
   border-radius: 8px;
-  padding: 8px 12px;
+  width:150px;
+  height:40px;
+  padding-inline:15px;
   cursor: pointer;
   color: #e2e8f0; /* Grigio chiaro per il testo */
   font-family: inherit;
@@ -26,10 +43,10 @@ export const LanguageButton = styled.button`
   }
 `;
 
-export const Flag = styled.span`
-  font-size: 1.1rem;
-  margin-right: 8px;
-  line-height: 1;
+export const Flag = styled.img`
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
 `;
 
 export const LanguageName = styled.span`
@@ -46,7 +63,6 @@ export const ChevronIcon = styled.span`
 export const LanguageDropdown = styled.div`
   position: absolute;
   top: calc(100% + 5px);
-  right: 0;
   background-color: #2d3748;
   border: 1px solid #4a5568;
   border-radius: 8px;
@@ -57,12 +73,20 @@ export const LanguageDropdown = styled.div`
   transform: ${({ $isOpen }) => ($isOpen ? 'translateY(0)' : 'translateY(-10px)')};
   visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+
+  ${mq.laptop} {
+    right:0;
+    }
 `;
 
 export const LanguageItem = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
+  width:150px;
+  height:40px;
+  padding-inline:25px;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap:10px;
+  align-items:center;
   cursor: pointer;
   color: #e2e8f0;
   transition: background-color 0.2s ease;
