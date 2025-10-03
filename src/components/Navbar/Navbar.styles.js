@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   top: 0;
   right: 0;
   left: 0;
-  z-index: 10;
+  z-index: 40;
   ${mq.tablet} {
     padding-inline: var(--spacing-xl);
   }

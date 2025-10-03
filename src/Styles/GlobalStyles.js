@@ -21,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
   --color-text-dark: #333;
   --color-bg-light: #fff;
   --color-text-grey: #a2a2a2;
-  --z-preloader: 10;
+  --z-preloader: 50;
 
   /* Typography */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

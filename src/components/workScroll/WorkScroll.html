@@ -1,0 +1,968 @@
+// ========== VARIABLES ==========
+$primary-color: #ffffff;
+$text-color: #ffffffdd;
+$font-primary: 'Inter', sans-serif;
+$font-secondary: 'Oswald', sans-serif;
+$max-width: 1440px;
+
+// ========== MIXINS ==========
+@mixin flex-center {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+@mixin absolute-full {
+position: absolute;
+left: 0;
+top: 0;
+}
+
+@mixin font-oswald {
+font-family: $font-secondary;
+font-weight: 600;
+}
+
+@mixin card-styles {
+background-position: center;
+background-size: cover;
+box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.6);
+}
+
+@mixin pill-button {
+border-radius: 99px;
+height: 36px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+// ========== BASE STYLES ==========
+body {
+margin: 0;
+background-color: #1a1a1a;
+color: $text-color;
+position: relative;
+overflow: hidden;
+font-family: $font-primary;
+}
+
+// ========== MAIN CONTAINER ==========
+.main-container {
+position: relative;
+max-width: $max-width;
+height: 100vh;
+margin: 0 auto;
+overflow: hidden;
+width: 100%; // Aggiungi questa linea
+}
+
+// ========== CARD COMPONENTS ==========
+.card {
+@include absolute-full;
+@include card-styles;
+// Le card possono estendersi oltre il container
+// ma saranno visibili solo all'interno dei limiti del container
+}
+
+.card-content {
+@include absolute-full;
+color: $text-color;
+padding-left: 16px;
+
+.content-place {
+margin-top: 6px;
+font-size: 13px;
+font-weight: 500;
+}
+
+.content-title-1,
+.content-title-2 {
+@include font-oswald;
+font-size: 20px;
+}
+
+.content-start {
+width: 30px;
+height: 5px;
+border-radius: 99px;
+background-color: $text-color;
+}
+}
+
+// ========== DETAILS SECTION ==========
+.details {
+z-index: 22;
+position: absolute;
+top: 210px;
+left: 60px;
+
+.place-box {
+height: 46px;
+overflow: hidden;
+
+.text {
+padding-top: 16px;
+font-size: 20px;
+position: relative;
+
+&:before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 30px;
+height: 4px;
+border-radius: 99px;
+background-color: white;
+}
+}
+}
+
+.title-1,
+.title-2 {
+@include font-oswald;
+font-size: 60px;
+}
+
+.title-box-1,
+.title-box-2 {
+margin-top: 2px;
+height: 70px;
+overflow: hidden;
+}
+
+.desc {
+margin-top: 16px;
+width: 450px;
+}
+
+.cta {
+width: 500px;
+margin-top: 24px;
+display: flex;
+align-items: center;
+
+.discover {
+@include pill-button;
+border: 1px solid $primary-color;
+background-color: transparent;
+padding: 4px 24px;
+font-size: 12px;
+text-transform: uppercase;
+color: #ffffff;
+}
+}
+}
+
+// ========== NAVIGATION ==========
+nav {
+position: fixed;
+left: 50%;
+transform: translateX(-50%);
+top: 0;
+width: 100%;
+max-width: $max-width;
+z-index: 50;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px 36px;
+font-weight: 500;
+box-sizing: border-box;
+
+svg {
+width: 20px;
+height: 20px;
+}
+
+.svg-container {
+width: 20px;
+height: 20px;
+}
+
+> div {
+display: inline-flex;
+align-items: center;
+text-transform: uppercase;
+font-size: 14px;
+
+&:first-child {
+gap: 10px;
+}
+
+&:last-child {
+gap: 24px;
+
+.active {
+position: relative;
+
+&:after {
+content: '';
+position: absolute;
+bottom: -8px;
+left: 0;
+right: 0;
+height: 3px;
+border-radius: 99px;
+background-color: $primary-color;
+}
+}
+}
+}
+}
+
+// ========== PAGINATION ==========
+.pagination {
+position: absolute;
+left: 50px;
+bottom: 50px; // Cambia da top a bottom per posizionarlo in basso
+display: inline-flex;
+z-index: 60;
+
+.arrow {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+border: 2px solid #ffffff55;
+@include flex-center;
+cursor: pointer; // Aggiungi per migliore UX
+transition: all 0.3s ease;
+
+&:hover {
+border-color: #ffffff;
+svg {
+color: #ffffff;
+}
+}
+
+&:nth-child(2) {
+margin-left: 20px;
+}
+
+svg {
+width: 24px;
+height: 24px;
+stroke-width: 2;
+color: #ffffff99;
+transition: color 0.3s ease;
+}
+}
+
+.progress-sub-container {
+margin-left: 24px;
+width: 500px;
+height: 50px;
+display: flex;
+align-items: center;
+
+.progress-sub-background {
+width: 500px;
+height: 3px;
+background-color: #ffffff33;
+
+.progress-sub-foreground {
+height: 3px;
+background-color: $primary-color;
+transition: width 0.3s ease;
+}
+}
+}
+}
+
+// ========== COVER ==========
+.cover {
+@include absolute-full;
+width: 100vw;
+height: 100vh;
+background-color: #fff;
+z-index: 100;
+}
+
+// ========== UTILITY CLASSES ==========
+#btn {
+position: absolute;
+top: 690px;
+left: 16px;
+z-index: 99;
+}
+
+<div id="demo" class="demo"></div>
+
+<div class="details" id="details-even">
+    <div class="place-box">
+        <div class="text">Switzerland Alps</div>
+    </div>
+    <div class="title-box-1"><div class="title-1">SAINT</div></div>
+    <div class="title-box-2"><div class="title-2">ANTONIEN</div></div>
+    <div class="desc">
+        Tucked away in the Switzerland Alps, Saint Antönien offers an idyllic
+        retreat for those seeking tranquility and adventure alike. It's a hidden
+        gem for backcountry skiing in winter and boasts lush trails for hiking
+        and mountain biking during the warmer months.
+    </div>
+    <div class="cta">
+        <button class="discover">Discover Location</button>
+    </div>
+</div>
+
+<div class="details" id="details-odd">
+    <div class="place-box">
+        <div class="text">Switzerland Alps</div>
+    </div>
+    <div class="title-box-1"><div class="title-1">SAINT </div></div>
+    <div class="title-box-2"><div class="title-2">ANTONIEN</div></div>
+    <div class="desc">
+        Tucked away in the Switzerland Alps, Saint Antönien offers an idyllic
+        retreat for those seeking tranquility and adventure alike. It's a hidden
+        gem for backcountry skiing in winter and boasts lush trails for hiking
+        and mountain biking during the warmer months.
+    </div>
+    <div class="cta">
+        <button class="discover">Discover Location</button>
+    </div>
+</div>
+
+<div class="pagination" id="pagination">
+    <div class="arrow arrow-left">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+    </div>
+    <div class="arrow arrow-right">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+    </div>
+    <div class="progress-sub-container">
+        <div class="progress-sub-background">
+            <div class="progress-sub-foreground"></div>
+        </div>
+    </div>
+</div>
+
+<div class="cover"></div>
+
+<div class="cover"></div>
+
+const data = [
+{
+place: 'Switzerland Alps',
+title: 'SAINT',
+title2: 'ANTONIEN',
+description:
+"Tucked away in the Switzerland Alps, Saint Antönien offers an idyllic retreat for those seeking tranquility and adventure alike. It's a hidden gem for backcountry skiing in winter and boasts lush trails for hiking and mountain biking during the warmer months.",
+image: 'https://assets.codepen.io/3685267/timed-cards-1.jpg'
+},
+{
+place: 'Japan Alps',
+title: 'NANGANO',
+title2: 'PREFECTURE',
+description:
+"Nagano Prefecture, set within the majestic Japan Alps, is a cultural treasure trove with its historic shrines and temples, particularly the famous Zenkō-ji. The region is also a hotspot for skiing and snowboarding, offering some of the country's best powder.",
+image: 'https://assets.codepen.io/3685267/timed-cards-2.jpg'
+},
+{
+place: 'Sahara Desert - Morocco',
+title: 'MARRAKECH',
+title2: 'MEROUGA',
+description:
+'The journey from the vibrant souks and palaces of Marrakech to the tranquil, starlit sands of Merzouga showcases the diverse splendor of Morocco. Camel treks and desert camps offer an unforgettable immersion into the nomadic way of life.',
+image: 'https://assets.codepen.io/3685267/timed-cards-3.jpg'
+},
+{
+place: 'Sierra Nevada - USA',
+title: 'YOSEMITE',
+title2: 'NATIONAL PARAK',
+description:
+'Yosemite National Park is a showcase of the American wilderness, revered for its towering granite monoliths, ancient giant sequoias, and thundering waterfalls. The park offers year-round recreational activities, from rock climbing to serene valley walks.',
+image: 'https://assets.codepen.io/3685267/timed-cards-4.jpg'
+},
+{
+place: 'Tarifa - Spain',
+title: 'LOS LANCES',
+title2: 'BEACH',
+description:
+"Los Lances Beach in Tarifa is a coastal paradise known for its consistent winds, making it a world-renowned spot for kitesurfing and windsurfing. The beach's long, sandy shores provide ample space for relaxation and sunbathing, with a vibrant atmosphere of beach bars and cafes.",
+image: 'https://assets.codepen.io/3685267/timed-cards-5.jpg'
+},
+{
+place: 'Cappadocia - Turkey',
+title: 'Göreme',
+title2: 'Valley',
+description:
+'Göreme Valley in Cappadocia is a historical marvel set against a unique geological backdrop, where centuries of wind and water have sculpted the landscape into whimsical formations. The valley is also famous for its open-air museums, underground cities, and the enchanting experience of hot air ballooning.',
+image: 'https://assets.codepen.io/3685267/timed-cards-6.jpg'
+}
+];
+
+// ========== CONSTANTS ==========
+const AUTO_SCROLL_INTERVAL = 2000; // 3 secondi
+
+// ========== UTILITY FUNCTIONS ==========
+const getElement = id => document.getElementById(id);
+
+const getCard = index => `#card${index}`;
+const getCardContent = index => `#card-content-${index}`;
+const getSliderItem = index => `#slide-item-${index}`;
+
+const animate = (target, duration, properties) => {
+return new Promise(resolve => {
+gsap.to(target, {
+...properties,
+duration,
+onComplete: resolve
+});
+});
+};
+
+// ========== STATE MANAGEMENT ==========
+const state = {
+order: [0, 1, 2, 3, 4, 5],
+detailsEven: true,
+clicks: 0,
+offsetTop: 200,
+offsetLeft: 700,
+cardWidth: 200,
+cardHeight: 300,
+gap: 40,
+numberSize: 50,
+ease: 'sine.inOut',
+autoScrollTimer: null
+};
+
+// ========== DOM INITIALIZATION ==========
+function initializeDOM() {
+const cardsHTML = data
+.map((item, index) => `<div class="card" id="card${index}"
+    style="background-image:url(${item.image})"></div>`)
+.join('');
+
+const cardContentsHTML = data
+.map(
+(item, index) => `
+<div class="card-content" id="card-content-${index}">
+    <div class="content-start"></div>
+    <div class="content-place">${item.place}</div>
+    <div class="content-title-1">${item.title}</div>
+    <div class="content-title-2">${item.title2}</div>
+</div>`
+)
+.join('');
+
+getElement('demo').innerHTML = cardsHTML + cardContentsHTML;
+}
+
+// ========== AUTO-SCROLL MANAGEMENT ==========
+function startAutoScroll() {
+// Cancella il timer esistente
+stopAutoScroll();
+
+// Avvia nuovo timer
+state.autoScrollTimer = setTimeout(() => {
+if (state.clicks === 0) {
+// Solo se non ci sono click in corso
+state.clicks++;
+stepForward().finally(() => {
+// Riavvia l'auto-scroll dopo che l'animazione è completata
+startAutoScroll();
+});
+}
+}, AUTO_SCROLL_INTERVAL);
+}
+
+function stopAutoScroll() {
+if (state.autoScrollTimer) {
+clearTimeout(state.autoScrollTimer);
+state.autoScrollTimer = null;
+}
+}
+
+function resetAutoScroll() {
+startAutoScroll();
+}
+
+// ========== ANIMATION HELPERS ==========
+function updateDetailsContent(detailsSelector, dataIndex) {
+const item = data[dataIndex];
+document.querySelector(`${detailsSelector} .place-box .text`).textContent =
+item.place;
+document.querySelector(`${detailsSelector} .title-1`).textContent = item.title;
+document.querySelector(`${detailsSelector} .title-2`).textContent = item.title2;
+document.querySelector(`${detailsSelector} .desc`).textContent =
+item.description;
+}
+
+function animateDetailsTransition(detailsSelector) {
+return new Promise(resolve => {
+gsap.to(detailsSelector, { opacity: 1, delay: 0.4, ease: state.ease });
+gsap.to(`${detailsSelector} .text`, { y: 0, delay: 0.1, duration: 0.7, ease:
+state.ease });
+gsap.to(`${detailsSelector} .title-1`, { y: 0, delay: 0.15, duration: 0.7, ease:
+state.ease });
+gsap.to(`${detailsSelector} .title-2`, { y: 0, delay: 0.15, duration: 0.7, ease:
+state.ease });
+gsap.to(`${detailsSelector} .desc`, { y: 0, delay: 0.3, duration: 0.4, ease:
+state.ease });
+gsap.to(`${detailsSelector} .cta`, {
+y: 0,
+delay: 0.35,
+duration: 0.4,
+onComplete: resolve,
+ease: state.ease
+});
+});
+}
+
+function resetDetails(detailsSelector) {
+gsap.set(detailsSelector, { opacity: 0 });
+gsap.set(`${detailsSelector} .text`, { y: 100 });
+gsap.set(`${detailsSelector} .title-1`, { y: 100 });
+gsap.set(`${detailsSelector} .title-2`, { y: 100 });
+gsap.set(`${detailsSelector} .desc`, { y: 50 });
+gsap.set(`${detailsSelector} .cta`, { y: 60 });
+}
+
+function setupCardGrid() {
+const [active, ...rest] = state.order;
+const { offsetTop, offsetLeft, cardWidth, cardHeight, gap } = state;
+
+rest.forEach((cardIndex, index) => {
+const xPosition = offsetLeft + index * (cardWidth + gap);
+
+gsap.set(getCard(cardIndex), {
+x: xPosition,
+y: offsetTop,
+width: cardWidth,
+height: cardHeight,
+zIndex: 30,
+borderRadius: 10
+});
+
+gsap.set(getCardContent(cardIndex), {
+x: xPosition,
+zIndex: 40,
+y: offsetTop + cardHeight - 100
+});
+
+gsap.set(getSliderItem(cardIndex), {
+x: (index + 1) * state.numberSize
+});
+});
+}
+
+// ========== CORE ANIMATIONS ==========
+function initializeActiveCard() {
+const [active] = state.order;
+const detailsActive = state.detailsEven ? '#details-even' : '#details-odd';
+const detailsInactive = state.detailsEven ? '#details-odd' : '#details-even';
+
+// Setup main card
+gsap.set(getCard(active), {
+x: 0,
+y: 0,
+width: window.innerWidth,
+height: window.innerHeight
+});
+
+gsap.set(getCardContent(active), {
+x: 0,
+y: 0,
+opacity: 0
+});
+
+// Setup details panels
+gsap.set(detailsActive, {
+opacity: 0,
+zIndex: 22,
+x: -200
+});
+
+resetDetails(detailsInactive);
+}
+
+function initializeUI() {
+const { innerHeight: height, innerWidth: width } = window;
+state.offsetTop = height - 430;
+state.offsetLeft = width - 830;
+
+// Setup pagination and navigation
+gsap.set('#pagination', {
+top: state.offsetTop + 330,
+left: state.offsetLeft,
+y: 200,
+opacity: 0,
+zIndex: 60
+});
+
+gsap.set('nav', {
+y: -200,
+opacity: 0
+});
+
+gsap.set('.indicator', {
+x: -window.innerWidth
+});
+
+gsap.set('.progress-sub-foreground', {
+width: 500 * (1 / state.order.length) * (state.order[0] + 1)
+});
+
+initializeActiveCard();
+setupCardGrid();
+}
+
+function startInitialAnimations() {
+const startDelay = 0.6;
+const [active, ...rest] = state.order;
+const detailsActive = state.detailsEven ? '#details-even' : '#details-odd';
+
+// Initial cover animation
+gsap.to('.cover', {
+x: window.innerWidth + 400,
+delay: 0.5,
+ease: state.ease,
+onComplete: () => {
+// Avvia l'auto-scroll dopo l'animazione iniziale
+startAutoScroll();
+}
+});
+
+// Animate cards into grid
+rest.forEach((cardIndex, index) => {
+const xPosition = state.offsetLeft + index * (state.cardWidth + state.gap);
+
+gsap.to(getCard(cardIndex), {
+x: xPosition,
+zIndex: 30,
+delay: 0.05 * index + startDelay,
+ease: state.ease
+});
+
+gsap.to(getCardContent(cardIndex), {
+x: xPosition,
+zIndex: 40,
+delay: 0.05 * index + startDelay,
+ease: state.ease
+});
+});
+
+// Animate UI elements
+gsap.to('#pagination', {
+y: 0,
+opacity: 1,
+ease: state.ease,
+delay: startDelay
+});
+
+gsap.to('nav', {
+y: 0,
+opacity: 1,
+ease: state.ease,
+delay: startDelay
+});
+
+gsap.to(detailsActive, {
+opacity: 1,
+x: 0,
+ease: state.ease,
+delay: startDelay
+});
+}
+
+// ========== NAVIGATION FUNCTIONS ==========
+function stepForward() {
+return new Promise(resolve => {
+state.order.push(state.order.shift());
+state.detailsEven = !state.detailsEven;
+
+const [active, ...rest] = state.order;
+const previous = rest[rest.length - 1];
+const detailsActive = state.detailsEven ? '#details-even' : '#details-odd';
+const detailsInactive = state.detailsEven ? '#details-odd' : '#details-even';
+
+// Update content
+updateDetailsContent(detailsActive, active);
+
+// Setup animation layers
+gsap.set(detailsActive, { zIndex: 22 });
+gsap.set(detailsInactive, { zIndex: 12 });
+gsap.set(getCard(previous), { zIndex: 10 });
+gsap.set(getCard(active), { zIndex: 20 });
+
+// Animate previous card
+gsap.to(getCard(previous), {
+scale: 1.5,
+ease: state.ease
+});
+
+gsap.to(getCardContent(active), {
+y: state.offsetTop + state.cardHeight - 10,
+opacity: 0,
+duration: 0.3,
+ease: state.ease
+});
+
+// Update indicators
+gsap.to(getSliderItem(active), { x: 0, ease: state.ease });
+gsap.to(getSliderItem(previous), { x: -state.numberSize, ease: state.ease });
+
+gsap.to('.progress-sub-foreground', {
+width: 500 * (1 / state.order.length) * (active + 1),
+ease: state.ease
+});
+
+// Animate active card to full screen
+gsap.to(getCard(active), {
+x: 0,
+y: 0,
+ease: state.ease,
+width: window.innerWidth,
+height: window.innerHeight,
+borderRadius: 0,
+onComplete: () => {
+finalizeStepForward(active, previous, rest, detailsInactive);
+state.clicks--;
+if (state.clicks > 0) stepForward();
+resolve();
+}
+});
+
+// Animate other cards
+animateOtherCardsForward(rest, previous);
+animateDetailsTransition(detailsActive).then(resolve);
+});
+}
+
+function finalizeStepForward(active, previous, rest, detailsInactive) {
+const xNew = state.offsetLeft + (rest.length - 1) * (state.cardWidth +
+state.gap);
+
+gsap.set(getCard(previous), {
+x: xNew,
+y: state.offsetTop,
+width: state.cardWidth,
+height: state.cardHeight,
+zIndex: 30,
+borderRadius: 10,
+scale: 1
+});
+
+gsap.set(getCardContent(previous), {
+x: xNew,
+y: state.offsetTop + state.cardHeight - 100,
+opacity: 1,
+zIndex: 40
+});
+
+gsap.set(getSliderItem(previous), {
+x: rest.length * state.numberSize
+});
+
+resetDetails(detailsInactive);
+}
+
+function animateOtherCardsForward(rest, previous) {
+rest.forEach((cardIndex, index) => {
+if (cardIndex !== previous) {
+const xNew = state.offsetLeft + index * (state.cardWidth + state.gap);
+
+gsap.set(getCard(cardIndex), { zIndex: 30 });
+
+gsap.to(getCard(cardIndex), {
+x: xNew,
+y: state.offsetTop,
+width: state.cardWidth,
+height: state.cardHeight,
+scale: 1,
+ease: state.ease,
+delay: 0.1 * (index + 1)
+});
+
+gsap.to(getCardContent(cardIndex), {
+x: xNew,
+y: state.offsetTop + state.cardHeight - 100,
+opacity: 1,
+zIndex: 40,
+ease: state.ease,
+delay: 0.1 * (index + 1)
+});
+
+gsap.to(getSliderItem(cardIndex), {
+x: (index + 1) * state.numberSize,
+ease: state.ease
+});
+}
+});
+}
+
+function stepBackward() {
+return new Promise(resolve => {
+const lastCard = state.order.pop();
+state.order.unshift(lastCard);
+state.detailsEven = !state.detailsEven;
+
+const [active, next, ...rest] = state.order;
+const previousActive = state.order[1];
+const detailsActive = state.detailsEven ? '#details-even' : '#details-odd';
+const detailsInactive = state.detailsEven ? '#details-odd' : '#details-even';
+
+// Update content
+updateDetailsContent(detailsActive, active);
+
+// Setup animation layers
+gsap.set(detailsActive, { zIndex: 22 });
+gsap.set(detailsInactive, { zIndex: 12 });
+
+// Animate previous active card to grid
+gsap.set(getCard(previousActive), { zIndex: 30 });
+
+gsap.to(getCard(previousActive), {
+x: state.offsetLeft,
+y: state.offsetTop,
+width: state.cardWidth,
+height: state.cardHeight,
+borderRadius: 10,
+scale: 1,
+ease: state.ease,
+delay: 0.3
+});
+
+gsap.to(getCardContent(previousActive), {
+x: state.offsetLeft,
+y: state.offsetTop + state.cardHeight - 100,
+opacity: 1,
+zIndex: 40,
+ease: state.ease,
+delay: 0.3
+});
+
+// Setup new active card
+gsap.set(getCard(active), {
+zIndex: 20,
+x: 0,
+y: 0,
+width: window.innerWidth,
+height: window.innerHeight,
+borderRadius: 0
+});
+
+// Animate other cards
+animateOtherCardsBackward(rest, previousActive);
+
+// Update indicators
+gsap.to(getSliderItem(active), { x: 0, ease: state.ease });
+gsap.to(getSliderItem(previousActive), {
+x: state.numberSize,
+ease: state.ease,
+delay: 0.3
+});
+
+gsap.to('.progress-sub-foreground', {
+width: 500 * (1 / state.order.length) * (active + 1),
+ease: state.ease
+});
+
+resetDetails(detailsInactive);
+
+animateDetailsTransition(detailsActive).then(() => {
+state.clicks--;
+resolve();
+});
+});
+}
+
+function animateOtherCardsBackward(rest, previousActive) {
+rest.forEach((cardIndex, index) => {
+if (cardIndex !== previousActive) {
+const xNew = state.offsetLeft + (index + 1) * (state.cardWidth + state.gap);
+
+gsap.to(getCard(cardIndex), {
+x: xNew,
+y: state.offsetTop,
+width: state.cardWidth,
+height: state.cardHeight,
+scale: 1,
+ease: state.ease,
+delay: 0.1 * (index + 1)
+});
+
+gsap.to(getCardContent(cardIndex), {
+x: xNew,
+ease: state.ease,
+delay: 0.1 * (index + 1)
+});
+
+gsap.to(getSliderItem(cardIndex), {
+x: (index + 2) * state.numberSize,
+ease: state.ease,
+delay: 0.1 * (index + 1)
+});
+}
+});
+}
+
+// ========== EVENT HANDLERS ==========
+function setupEventListeners() {
+const rightArrow = document.querySelector('.arrow-right');
+const leftArrow = document.querySelector('.arrow-left');
+
+rightArrow.addEventListener('click', () => {
+if (state.clicks > 0) return;
+state.clicks++;
+resetAutoScroll(); // Reset del timer
+stepForward();
+});
+
+leftArrow.addEventListener('click', () => {
+if (state.clicks > 0) return;
+state.clicks++;
+resetAutoScroll(); // Reset del timer
+stepBackward();
+});
+}
+
+// ========== IMAGE LOADING ==========
+function loadImage(src) {
+return new Promise((resolve, reject) => {
+const img = new Image();
+img.onload = () => resolve(img);
+img.onerror = reject;
+img.src = src;
+});
+}
+
+async function loadAllImages() {
+const promises = data.map(item => loadImage(item.image));
+return Promise.all(promises);
+}
+
+// ========== INITIALIZATION ==========
+async function init() {
+try {
+initializeDOM();
+await loadAllImages();
+initializeUI();
+startInitialAnimations();
+setupEventListeners();
+} catch (error) {
+console.error('One or more images failed to load', error);
+}
+}
+
+// Start the application
+init();

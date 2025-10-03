@@ -9,6 +9,7 @@ import Education from './components/Education/Education';
 import Contact from './components/contact/Contact';
 import Footer from './components/Footer/Footer';
 import ParallaxEllipseCards from './components/Parallax/Parallax';
+import WorkScroll from './components/workScroll/WorkScroll';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
 
 const AppWrap = styled.div``;
@@ -35,7 +36,7 @@ function App() {
         <Navbar />
         <Presentation isLoading={isLoading} />
         <Education />
-        <ParallaxEllipseCards />
+        <WorkScroll />
         <Contact />
         <Footer />
         <ScrollToTopButton />
