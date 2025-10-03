@@ -191,8 +191,14 @@ const WorkScroll = () => {
   // Core animations
   const initializeUI = useCallback(() => {
     const { innerHeight: height, innerWidth: width } = window;
-    const newOffsetTop = height - 280;
-    const newOffsetLeft = width - 830;
+
+    // Determina se siamo su mobile/tablet o laptop
+    const isMobileOrTablet = width < 1024;
+    const isLaptop = width >= 1024 && width <= 1440;
+
+    // Calcola offsetTop in base al dispositivo
+    const newOffsetTop = isMobileOrTablet ? height - -30 : height - 150;
+    const newOffsetLeft = isLaptop ? width - 450 : width - 830;
 
     stateRef.current.offsetTop = newOffsetTop;
     stateRef.current.offsetLeft = newOffsetLeft;

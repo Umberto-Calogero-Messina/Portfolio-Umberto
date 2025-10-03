@@ -77,14 +77,15 @@ export const Card = styled.div`
 
 export const Details = styled.div`
   position: absolute;
-  top: 130px;
-  left: 156px;
+  top: 50px;
+  left: 16px;
   color: ${textColor};
   font-family: ${fontPrimary};
   z-index: 22;
 
   ${mq.tablet} {
-    left: 40px;
+    left: 48px;
+    top: 30px;
   }
 
   ${mq.laptop} {
