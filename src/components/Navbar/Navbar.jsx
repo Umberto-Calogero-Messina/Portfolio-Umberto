@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/icons/logo.png';
 import { Nav, Container, Logo, LogoImg, Links, LinkA, Hamburger, HamburgerLine } from './Navbar.styles';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -7,34 +8,39 @@ import LanguageSelector from '../LanguageSelector/LanguageSelector';
 const Navbar = () => {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const handleLinkClick = () => setOpen(false);
+
+  // Helper to decide whether to use Link or <a>
+  const getLink = (path, text, isPageLink = false) => {
+    if (isPageLink || location.pathname !== '/') {
+      return (
+        <LinkA as={Link} to={path} onClick={handleLinkClick}>
+          {text}
+        </LinkA>
+      );
+    }
+    return (
+      <LinkA href={path} onClick={handleLinkClick}>
+        {text}
+      </LinkA>
+    );
+  };
 
   return (
     <Nav>
       <Container>
         <Logo>
-          <LogoImg src={logo} alt='Logo' />
+          <Link to='/'>
+            <LogoImg src={logo} alt='Logo' />
+          </Link>
         </Logo>
         <Links open={open}>
-          <li>
-            <LinkA href='#home' onClick={() => setOpen(false)}>
-              {t('navbar.home')}
-            </LinkA>
-          </li>
-          <li>
-            <LinkA href='#about' onClick={() => setOpen(false)}>
-              {t('navbar.about')}
-            </LinkA>
-          </li>
-          <li>
-            <LinkA href='#portfolio' onClick={() => setOpen(false)}>
-              {t('navbar.projects')}
-            </LinkA>
-          </li>
-          <li>
-            <LinkA href='#contact' onClick={() => setOpen(false)}>
-              {t('navbar.contact')}
-            </LinkA>
-          </li>
+          <li>{getLink('/', t('navbar.home'), true)}</li>
+          <li>{getLink('/#about', t('navbar.about'))}</li>
+          <li>{getLink('/#portfolio', t('navbar.projects'))}</li>
+          <li>{getLink('/#contact', t('navbar.contact'))}</li>
           <li>
             <LanguageSelector />
           </li>

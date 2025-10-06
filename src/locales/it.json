@@ -41,23 +41,29 @@
     "title": "I miei lavori",
     "items": [
       {
-        "title": "Progetto 1",
-        "description": "Descrizione progetto 1"
+        "title": "Sito Web Portfolio Personale",
+        "description": "Un portfolio responsive costruito con React e Vite per mostrare la mia esperienza professionale, progetti e informazioni di contatto. Include supporto multilingue e hook personalizzati per una gestione efficiente dello stato."
       },
       {
-        "title": "Progetto 2",
-        "description": "Descrizione progetto 2"
+        "title": "Dashboard Web Interattiva",
+        "description": "Una dashboard front-end moderna progettata con React, Styled Components e librerie di grafici per analisi in tempo reale e visualizzazione dinamica dei dati."
       },
       {
-        "title": "Progetto 3",
-        "description": "Descrizione progetto 3"
+        "title": "Landing Page E-Commerce",
+        "description": "Un'applicazione a pagina singola ad alte prestazioni ottimizzata per SEO e conversione, costruita con React e Vite."
       },
       {
-        "title": "Progetto 4",
-        "description": "Descrizione progetto 4"
+        "title": "Metin2 — Sistema Negozio Offline",
+        "description": "Sviluppato un sistema di negozio offline completamente funzionale in C++ e Python per Metin2. Implementate transazioni sicure, archiviazione persistente dei dati in MySQL e interfacce user-friendly per i giocatori."
       },
-      { "title": "Progetto 5", "description": "Descrizione progetto 5" },
-      { "title": "Progetto 6", "description": "Descrizione progetto 6" }
+      {
+        "title": "Metin2 — Framework Quest e Missioni",
+        "description": "Progettato e scriptato un sistema di quest modulare utilizzando Lua e Python, abilitando la gestione dinamica degli eventi e il flusso narrativo in-game per i server privati di Metin2."
+      },
+      {
+        "title": "Metin2 — Gestione Database di Gioco",
+        "description": "Progettata una logica di database robusta in MySQL/MariaDB per una gestione efficiente dei dati dei giocatori, archiviazione degli oggetti e sincronizzazione del sistema per migliorare la stabilità del gameplay."
+      }
     ]
   },
   "contact": {

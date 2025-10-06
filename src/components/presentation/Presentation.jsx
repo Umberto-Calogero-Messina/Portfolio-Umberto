@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import presentatioImg from '../../assets/images/foto-profilo.png';
 import cvUrl from '../../curriculum/CV-UmbertoCalogeroMessina.pdf';
@@ -27,7 +27,7 @@ const Presentation = ({ isLoading = false }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const words = t('presentation.roles', { returnObjects: true }) || [];
+  const words = useMemo(() => t('presentation.roles', { returnObjects: true }) || [], [t]);
 
   useEffect(() => {
     const currentWord = words[currentWordIndex];
@@ -53,7 +53,7 @@ const Presentation = ({ isLoading = false }) => {
     }
 
     return () => clearTimeout(timeout);
-  }, [displayedText, isDeleting, currentWordIndex]);
+  }, [displayedText, isDeleting, currentWordIndex, words]);
 
   return (
     <Section id='home'>

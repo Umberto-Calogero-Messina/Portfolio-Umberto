@@ -12,8 +12,8 @@ export const ArrowButton = styled.button`
   width: 40px;
   height:40px;
   cursor: pointer;
-  opacity: ${props => (props.isVisible ? 1 : 0)};
-  visibility: ${props => (props.isVisible ? 'visible' : 'hidden')};
+  opacity: ${props => (props.$isVisible ? 1 : 0)};
+  visibility: ${props => (props.$isVisible ? 'visible' : 'hidden')};
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   display: flex;
   align-items: center;

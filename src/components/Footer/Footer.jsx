@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FooterEl, Inner, Brand, Links, LinkItem, HoverLetters, LetterSpan, Copy } from './Footer.styles';
 import { useLanguage } from '../../contexts/LanguageContext';
 

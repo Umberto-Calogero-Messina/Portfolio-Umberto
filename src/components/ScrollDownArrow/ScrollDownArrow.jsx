@@ -28,7 +28,7 @@ const ScrollDownArrow = ({ isLoading = false }) => {
   };
 
   return (
-    <ArrowButton onClick={scrollToNextSection} isVisible={isVisible}>
+    <ArrowButton onClick={scrollToNextSection} $isVisible={isVisible}>
       <ArrowIcon>↓</ArrowIcon>
     </ArrowButton>
   );

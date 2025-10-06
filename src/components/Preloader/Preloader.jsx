@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { PRELOADER_TEXT } from '../../constants/variables';
 import { PreloaderWrap, LoadingText } from './Preloader.styles';
 

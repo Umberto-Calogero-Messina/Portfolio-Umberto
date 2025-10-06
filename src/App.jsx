@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar/Navbar';
 import Preloader from './components/Preloader/Preloader';
 import { PRELOADER_ANIMATION_DURATION, PRELOADER_TEXT_DURATION } from './constants/variables';
-import Presentation from './components/presentation/Presentation';
-import Education from './components/Education/Education';
-import Contact from './components/contact/Contact';
 import Footer from './components/Footer/Footer';
-import ParallaxEllipseCards from './components/Parallax/Parallax';
-import WorkScroll from './components/workScroll/WorkScroll';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
+import HomePage from './pages/HomePage';
+import Metin2Page from './pages/Metin2Page/Metin2Page';
 
 const AppWrap = styled.div``;
 function App() {
@@ -31,19 +29,22 @@ function App() {
   }, []);
 
   return (
-    <LanguageProvider>
-      <AppWrap>
-        <Navbar />
-        <Presentation isLoading={isLoading} />
-        <Education />
-        <WorkScroll />
-        <Contact />
-        <Footer />
-        <ScrollToTopButton />
-        {isLoading && <Preloader hideText={hideText} hidePreloader={hidePreloader} />}
-      </AppWrap>
-    </LanguageProvider>
+    <BrowserRouter>
+      <LanguageProvider>
+        <AppWrap>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage isLoading={isLoading} />} />
+            <Route path="/metin2" element={<Metin2Page />} />
+          </Routes>
+          <Footer />
+          <ScrollToTopButton />
+          {isLoading && <Preloader hideText={hideText} hidePreloader={hidePreloader} />}
+        </AppWrap>
+      </LanguageProvider>
+    </BrowserRouter>
   );
 }
 
 export default App;
+

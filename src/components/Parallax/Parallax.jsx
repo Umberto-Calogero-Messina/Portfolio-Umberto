@@ -65,7 +65,6 @@ const ParallaxEllipseCards = () => {
   // UI state
   const [scrollY, setScrollY] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [hoveredId, setHoveredId] = useState(null);
   const [manualRotation, setManualRotation] = useState(0); // rotation added by dragging
   const [dragging, setDragging] = useState(false);
@@ -99,15 +98,13 @@ const ParallaxEllipseCards = () => {
   // keep within ellipse container vertically and slightly flatten for aesthetics
   const radiusY = 100;
 
-  const translatedWorks = t('portfolio.items', { returnObjects: true }) || [];
-  const works = useMemo(
-    () =>
-      staticWorksData.map((work, index) => ({
-        ...work,
-        ...(translatedWorks[index] || { title: `Progetto ${index + 1}`, description: 'Caricamento...' })
-      })),
-    [translatedWorks]
-  );
+  const works = useMemo(() => {
+    const translatedWorks = t('portfolio.items', { returnObjects: true }) || [];
+    return staticWorksData.map((work, index) => ({
+      ...work,
+      ...(translatedWorks[index] || { title: `Progetto ${index + 1}`, description: 'Caricamento...' })
+    }));
+  }, [t]);
   const baseAngle = (2 * Math.PI) / works.length;
 
   // tuning
@@ -118,7 +115,6 @@ const ParallaxEllipseCards = () => {
   useEffect(() => {
     const onResize = () => {
       setWindowWidth(window.innerWidth);
-      setWindowHeight(window.innerHeight);
     };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);

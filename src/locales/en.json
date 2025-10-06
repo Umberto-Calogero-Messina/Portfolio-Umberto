@@ -41,23 +41,29 @@
     "title": "My Works",
     "items": [
       {
-        "title": "Project 1",
-        "description": "Description of project 1"
+        "title": "Personal Portfolio Website",
+        "description": "A responsive portfolio built with React and Vite to showcase my professional experience, projects, and contact information. Includes multilingual support and custom hooks for efficient state management."
       },
       {
-        "title": "Project 2",
-        "description": "Description of project 2"
+        "title": "Interactive Web Dashboard",
+        "description": "A modern front-end dashboard designed with React, Styled Components, and charting libraries for real-time analytics and dynamic data visualization."
       },
       {
-        "title": "Project 3",
-        "description": "Description of project 3"
+        "title": "E-Commerce Landing Page",
+        "description": "A high-performance single-page application optimized for SEO and conversion, built with React and Vite."
       },
       {
-        "title": "Project 4",
-        "description": "Description of project 4"
+        "title": "Metin2 — Offline Shop System",
+        "description": "Developed a fully functional offline shop system in C++ and Python for Metin2. Implemented secure transactions, persistent data storage in MySQL, and player-friendly interfaces."
       },
-      { "title": "Project 5", "description": "Description of project 5" },
-      { "title": "Project 6", "description": "Description of project 6" }
+      {
+        "title": "Metin2 — Quest & Mission Framework",
+        "description": "Designed and scripted a modular quest system using Lua and Python, enabling dynamic event handling and in-game narrative flow for Metin2 private servers."
+      },
+      {
+        "title": "Metin2 — Game Database Management",
+        "description": "Engineered robust database logic in MySQL/MariaDB for efficient player data management, item storage, and system synchronization to enhance gameplay stability."
+      }
     ]
   },
   "contact": {

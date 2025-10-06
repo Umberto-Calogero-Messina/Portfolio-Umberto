@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
+import { useLanguage } from '../../contexts/LanguageContext';
 import {
   MainContainer,
   Card,
@@ -16,57 +17,50 @@ import {
   Cover
 } from './WorkScroll.styles';
 
-const data = [
+// Static data (non-translatable)
+const staticData = [
   {
-    title: 'SAINT ANTONIEN',
-    description:
-      "Tucked away in the Switzerland Alps, Saint Antönien offers an idyllic retreat for those seeking tranquility and adventure alike. It's a hidden gem for backcountry skiing in winter and boasts lush trails for hiking and mountain biking during the warmer months.",
-    image: 'https://assets.codepen.io/3685267/timed-cards-1.jpg',
-    link: '/destinations/saint-antoniens'
+    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
+    link: 'https://github.com/Umberto-Calogero-Messina/Portfolio'
   },
   {
-    title: 'NANGANO PREFECTURE',
-    description:
-      "Nagano Prefecture, set within the majestic Japan Alps, is a cultural treasure trove with its historic shrines and temples, particularly the famous Zenkō-ji. The region is also a hotspot for skiing and snowboarding, offering some of the country's best powder.",
-    image: 'https://assets.codepen.io/3685267/timed-cards-2.jpg',
-    link: '/destinations/nagano'
+    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
+    link: 'https://github.com/Umberto-Calogero-Messina/YourDashboardRepo'
   },
   {
-    title: 'MARRAKECH MEROUGA',
-    description:
-      'The journey from the vibrant souks and palaces of Marrakech to the tranquil, starlit sands of Merzouga showcases the diverse splendor of Morocco. Camel treks and desert camps offer an unforgettable immersion into the nomadic way of life.',
-    image: 'https://assets.codepen.io/3685267/timed-cards-3.jpg',
-    link: '/destinations/marrakech'
+    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
+    link: 'https://github.com/Umberto-Calogero-Messina/YourEcommerceRepo'
   },
   {
-    title: 'YOSEMITE NATIONAL PARK',
-    description:
-      'Yosemite National Park is a showcase of the American wilderness, revered for its towering granite monoliths, ancient giant sequoias, and thundering waterfalls. The park offers year-round recreational activities, from rock climbing to serene valley walks.',
-    image: 'https://assets.codepen.io/3685267/timed-cards-4.jpg',
-    link: '/destinations/yosemite'
+    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
+    link: '/projects/metin2-offline-shop'
   },
   {
-    title: 'LOS LANCES BEACH',
-    description:
-      "Los Lances Beach in Tarifa is a coastal paradise known for its consistent winds, making it a world-renowned spot for kitesurfing and windsurfing. The beach's long, sandy shores provide ample space for relaxation and sunbathing, with a vibrant atmosphere of beach bars and cafes.",
-    image: 'https://assets.codepen.io/3685267/timed-cards-5.jpg',
-    link: '/destinations/los-lances'
+    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
+    link: '/projects/metin2-quest-framework'
   },
   {
-    title: 'GÖREME VALLEY',
-    description:
-      'Göreme Valley in Cappadocia is a historical marvel set against a unique geological backdrop, where centuries of wind and water have sculpted the landscape into whimsical formations. The valley is also famous for its open-air museums, underground cities, and the enchanting experience of hot air ballooning.',
-    image: 'https://assets.codepen.io/3685267/timed-cards-6.jpg',
-    link: '/destinations/goreme'
+    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
+    link: '/projects/metin2-database-management'
   }
 ];
 
 const AUTO_SCROLL_INTERVAL = 4000;
 
 const WorkScroll = () => {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [progressBarWidth, setProgressBarWidth] = useState(0);
+
+  // Get translated portfolio items
+  const translatedItems = t('portfolio.items', { returnObjects: true }) || [];
+
+  // Merge translated data with static data
+  const data = translatedItems.map((item, index) => ({
+    ...item,
+    ...staticData[index]
+  }));
 
   const autoScrollTimerRef = useRef(null);
   const mainContainerRef = useRef(null);
@@ -114,16 +108,19 @@ const WorkScroll = () => {
   }, [startAutoScroll]);
 
   // Animation helpers
-  const updateDetailsContent = useCallback((detailsElement, dataIndex) => {
-    const item = data[dataIndex];
-    if (detailsElement) {
-      const titleEl = detailsElement.querySelector('.title');
-      const descEl = detailsElement.querySelector('.desc');
+  const updateDetailsContent = useCallback(
+    (detailsElement, dataIndex) => {
+      const item = data[dataIndex];
+      if (detailsElement) {
+        const titleEl = detailsElement.querySelector('.title');
+        const descEl = detailsElement.querySelector('.desc');
 
-      if (titleEl) titleEl.textContent = item.title;
-      if (descEl) descEl.textContent = item.description;
-    }
-  }, []);
+        if (titleEl) titleEl.textContent = item.title;
+        if (descEl) descEl.textContent = item.description;
+      }
+    },
+    [data]
+  );
 
   const animateDetailsTransition = useCallback(detailsElement => {
     return new Promise(resolve => {
@@ -190,15 +187,18 @@ const WorkScroll = () => {
 
   // Core animations
   const initializeUI = useCallback(() => {
-    const { innerHeight: height, innerWidth: width } = window;
+    const container = mainContainerRef.current;
+    const height = container ? container.offsetHeight : window.innerHeight;
+    const screenWidth = window.innerWidth;
+    const containerWidth = container ? container.offsetWidth : screenWidth;
 
     // Determina se siamo su mobile/tablet o laptop
-    const isMobileOrTablet = width < 1024;
-    const isLaptop = width >= 1024 && width <= 1440;
+    const isMobileOrTablet = screenWidth < 1024;
+    const isLaptop = screenWidth >= 1024 && screenWidth <= 1440;
 
     // Calcola offsetTop in base al dispositivo
-    const newOffsetTop = isMobileOrTablet ? height - -30 : height - 150;
-    const newOffsetLeft = isLaptop ? width - 450 : width - 830;
+    const newOffsetTop = isMobileOrTablet ? height - -80 : height - 430;
+    const newOffsetLeft = isLaptop ? containerWidth - 450 : containerWidth - 830;
 
     stateRef.current.offsetTop = newOffsetTop;
     stateRef.current.offsetLeft = newOffsetLeft;
