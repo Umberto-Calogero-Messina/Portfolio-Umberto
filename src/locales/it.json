@@ -44,6 +44,7 @@
   ]
   },
   "portfolio": {
+    "discover": "Scorpi di più",
     "title": "I miei lavori",
 "items": [
     {
@@ -110,17 +111,17 @@
         {
           "title": "C++ - Engine Development & Performance Optimization",
           "description": "Sviluppo di sistemi C++ custom per  server privati di Metin2, con focus su ottimizzazione prestazioni e stabilità client. Risoluzione di memory leak attraverso advanced debugging e analisi memory footprint. Ottimizzazione gestione risorse game (texture, mesh, audio) con lazy loading e caching strategies. Refactoring codice legacy per migliorare maintainability e ridurre crash client. Implementazione custom memory allocators e profiling tools per identificare performance bottlenecks.",
-          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+          "image": "https://i.ibb.co/6cSfCN36/cpp-wallpaper.pnghttps://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
         },
         {
           "title": "Python - Game Systems Architecture & Automation",
           "description": "Sviluppo di interfacce ibride Python-C++ per migliorare l'esperienza utente e l'interazione di gioco. Creazione di sistemi di dialogo dinamici e quest tracker integrati. Automazione di processi di deployment e testing attraverso script custom. Sviluppo di tool per content creation e gestione configurazioni. Implementazione di event system modulari per contenuti stagionali.",
-          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+          "image": "https://i.ibb.co/QByxJrJ/python-wallpaper.png"
         },
         {
           "title": "MySQL/MariaDB - Database Architecture & Scalability",
           "description": "Architettura database scalabile per la gestione di configurazioni di gioco dinamiche via SQL. Implementazione di sistemi di setting centralizzati per regole di gameplay, parametri di balance e contenuti configurabili. Sviluppo di stored procedures per l'hot-reloading delle configurazioni senza downtime. Ottimizzazione query per l'accesso real-time a migliaia di parametri configurabili. Gestione di versioning delle configurazioni e rollback automatici.",
-          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+          "image": "https://i.ibb.co/whWcQ8zJ/navicat-wallpaper.png"
         }
       ]
     },
@@ -130,17 +131,17 @@
         {
           "title": "Lua - Custom Quest System & Game Logic",
           "description": "Sviluppo di sistemi di quest avanzati in Lua per la creazione di missioni personalizzate e eventi dinamici. Implementazione di script per NPC behavior, dialoghi interattivi e meccaniche di gioco uniche. Creazione di framework modulari per lo sviluppo rapido di contenuti e sistemi di reward complessi.",
-          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+          "image": "https://i.ibb.co/GvDDgt63/lua-wallpaper.png"
         },
         {
           "title": "Development Libraries & Code Quality",
           "description": "Creazione di librerie interne e utility per ottimizzare il workflow di sviluppo. Scrittura di codice clean e documentato per migliorare maintainability e collaborazione team. Sviluppo di helper functions e wrapper per accelerare lo sviluppo di nuove feature.",
-          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+          "image": "https://i.ibb.co/nqvvppyk/lib-wallpaper.png"
         },
         {
           "title": "Automated Staff Management Panels",
           "description": "Sviluppo di pannelli amministrativi automatizzati per la gestione efficiente dello staff di gioco. Implementazione di strumenti di moderazione real-time, sistemi di report automatici e dashboard di monitoraggio. Creazione di interfacce intuitive per ban management, log analysis e supporto player. Automazione di task ripetitivi per migliorare produttività e tempi di risposta.",
-          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+          "image": "https://i.ibb.co/23WYmHfr/Copilot-20251007-185106.png"
         }
       ]
     },

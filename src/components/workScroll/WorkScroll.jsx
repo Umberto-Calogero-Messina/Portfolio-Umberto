@@ -22,28 +22,28 @@ import {
 // Static data (non-translatable)
 const staticData = [
   {
-    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
+    image: 'https://i.ibb.co/6cSfCN36/cpp-wallpaper.png',
     link: '/metin2'
   },
   {
-    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
+    image: 'https://i.ibb.co/QByxJrJ/python-wallpaper.png',
     link: '/metin2'
   },
   {
-    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
+    image: 'https://i.ibb.co/whWcQ8zJ/navicat-wallpaper.png',
     link: '/metin2'
   },
   {
-    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
-    link: '/projects/workInProgress'
+    image: 'https://i.ibb.co/23WYmHfr/Copilot-20251007-185106.png',
+    link: ''
   },
   {
-    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
-    link: '/projects/workInProgress'
+    image: 'https://i.ibb.co/23WYmHfr/Copilot-20251007-185106.png',
+    link: ''
   },
   {
-    image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
-    link: '/projectsworkInProgress'
+    image: 'https://i.ibb.co/23WYmHfr/Copilot-20251007-185106.png',
+    link: ''
   }
 ];
 
@@ -566,7 +566,10 @@ const WorkScroll = () => {
         key={index}
         ref={el => (cardsRef.current[index] = el)}
         style={{
-          backgroundImage: `url(${item.image})`,
+          background: `linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0)), url(${item.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
           position: 'absolute',
           left: 0,
           top: 0
@@ -591,7 +594,7 @@ const WorkScroll = () => {
 
           <Cta className='cta'>
             <DiscoverButton className='discover' onClick={() => handleDiscoverClick(data[currentIndex]?.link)}>
-              Discover
+              {t('portfolio.discover')}
             </DiscoverButton>
           </Cta>
         </Details>
@@ -608,7 +611,7 @@ const WorkScroll = () => {
               className='discover'
               onClick={() => handleDiscoverClick(data[stateRef.current.order[0]]?.link)}
             >
-              Discover
+              {t('portfolio.discover')}
             </DiscoverButton>
           </Cta>
         </Details>

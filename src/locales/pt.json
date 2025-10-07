@@ -6,73 +6,85 @@
     "contact": "Contato"
   },
   "presentation": {
-    "greeting": "Olá, eu sou",
-    "description": "Sou um Desenvolvedor Web Front-End com 8 anos de experiência na indústria web e de videojogos, especializado no desenvolvimento de sistemas. Foco-me em escrever código limpo, escalável e intuitivo, facilitando a colaboração entre desenvolvedores e garantindo uma manutenção eficiente.",
+    "greeting": "Olá, sou",
+    "description": "Sou um Desenvolvedor Web Front-End com 8 anos de experiência no setor web e de jogos, especializado em desenvolvimento de sistemas. Foco em escrever código limpo, escalável e intuitivo, facilitando a colaboração entre desenvolvedores e garantindo manutenção eficiente.",
     "downloadCV": "Baixar CV",
-    "roles": ["Umberto Calogero", "Desenvolvedor Front-End", "Criativo", "Jogador"]
+    "roles": ["Umberto Calogero", "Front-End Dev", "Criativo", "Jogador"]
   },
   "education": {
-    "title": "Educação e competências",
-    "subtitle": "Mostrando seu talento, amplificando seu impacto",
+    "title": "Educação e habilidades",
+    "subtitle": "Mostrando seu talento amplificando seu impacto",
     "items": [
       {
         "title": "2014 - 2018",
-        "description": "Breve descrição do projeto 1.",
-        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit.dolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipisc"
+        "description": "Desenvolvedor Especializado em Sistemas para Jogos",
+        "subtitle": "Design e implementação de arquiteturas software de alto desempenho em C++ para sistemas de jogo complexos. Desenvolvimento de módulos Python para interfaces de usuário avançadas e gestão de bancos de dados otimizados MySQL/MariaDB para processamento de dados em tempo real."
       },
       {
-        "title": "2012 - 2014",
-        "description": "Breve descrição do projeto 2.",
-        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit.dolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipiscdolor sit amet, consectetur adipisc"
+        "title": "2023 - Presente",
+        "description": "Desenvolvedor Front-End & Arquiteto de Interfaces",
+        "subtitle": "Engenharia de aplicações web modernas com React, criando componentes reutilizáveis e otimizados. Desenvolvimento de soluções responsivas com HTML5 e CSS3, implementando melhores práticas para performance e acessibilidade."
       },
       {
-        "title": "2012 - 2014",
-        "description": "Breve descrição do projeto 2.",
-        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "title": "2024 - 2025",
+        "description": "Mestrado em React",
+        "subtitle": "Formação especializada em desenvolvimento de aplicações modernas com React, dominando sintaxe JSX, arquitetura de componentes reutilizáveis e gestão avançada de estados. Competências em estilização com CSS Modules e Styled Components, gestão de formulários complexos com React Hook Form e roteamento avançado com React Router. Preparação para desenvolvimento de aplicações enterprise-scale com melhores práticas e padrões avançados."
       },
       {
-        "title": "2012 - 2014",
-        "description": "Breve descrição do projeto 2.",
-        "subtitle": "Nemo Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "title": "2023 - 2025",
+        "description": "Mestrado em Advanced Front-End Developer",
+        "subtitle": "Especialização completa no stack front-end moderno: HTML5 semântico, CSS3 avançado com Grid/Flexbox, JavaScript ES6+ e desenvolvimento com React. Aprofundamento em arquiteturas web escaláveis, metodologias de desenvolvimento cutting-edge e performance. Formação prática em padrões avançados e melhores práticas para desenvolvimento de interfaces enterprise-grade na Trazos - Escola Superior de Arte Digital."
+      },
+      {
+        "title": "2018 - 2023",
+        "description": "Licenciatura em Linguística Computacional e Comunicação Global",
+        "subtitle": "Formação acadêmica focada na interseção entre tecnologia linguística e desenvolvimento software, potencializando competências em localização e internacionalização de aplicações digitais."
       }
     ]
   },
   "portfolio": {
+    "discover": "Descobrir mais",
     "title": "Meus trabalhos",
     "items": [
       {
-        "title": "Projeto 1",
-        "description": "Descrição do projeto 1"
+        "title": "Arquitetura C++ - Motor & Performance",
+        "description": "Desenvolvimento de sistemas core otimizados para Metin2 com C++, focado em gestão avançada de memória, otimização de performance e resolução de memory leaks. Implementação de algoritmos eficientes para gestão real-time de milhares de concorrentes."
       },
       {
-        "title": "Projeto 2",
-        "description": "Descrição do projeto 2"
+        "title": "Python - Sistemas de Jogo & Automação",
+        "description": "Design de frameworks modulares em Python para sistemas de jogo dinâmicos, automação de processos e desenvolvimento de ferramentas internas. Criação de APIs híbridas Python-C++ para experiências de usuário fluidas e personalizáveis."
       },
       {
-        "title": "Projeto 3",
-        "description": "Descrição do projeto 3"
+        "title": "MySQL/MariaDB - Arquitetura de Banco de Dados",
+        "description": "Arquitetura de bancos de dados escaláveis para gestão de configurações dinâmicas e dados de jogo em tempo real. Implementação de stored procedures avançadas, queries otimizadas e sistemas de backup automatizados para alta disponibilidade."
       },
       {
-        "title": "Projeto 4",
-        "description": "Descrição do projeto 4"
+        "title": "Trabalho em Progresso",
+        "description": "Desenvolvedor Front-End"
       },
-      { "title": "Projeto 5", "description": "Descrição do projeto 5" },
-      { "title": "Projeto 6", "description": "Descrição do projeto 6" }
+      {
+        "title": "Trabalho em Progresso",
+        "description": "Projetos Web"
+      },
+      {
+        "title": "Trabalho em Progresso",
+        "description": "React"
+      }
     ]
   },
   "contact": {
-    "title": "Entre em contato",
-    "subtitle": "Vamos trabalhar juntos! Sinta-se à vontade para me contatar para colaborações ou apenas para dizer olá.",
+    "title": "Contate-me",
+    "subtitle": "Vamos trabalhar juntos! Sinta-se livre para me contatar para colaborações ou apenas para cumprimentar.",
     "name": "Seu Nome",
     "email": "Seu Email",
     "message": "Sua Mensagem",
     "sendMessage": "ENVIAR MENSAGEM",
     "sending": "ENVIANDO...",
     "messageSent": "✅ Mensagem enviada com sucesso!",
-    "messageError": "❌ Falha ao enviar mensagem:",
-    "fillAllFields": "Por favor, preencha todos os campos obrigatórios.",
+    "messageError": "❌ Envio de mensagem falhou:",
+    "fillAllFields": "Por favor preencha todos os campos obrigatórios.",
     "securityViolation": "Violação de segurança detectada.",
-    "location": "Madrid, Espanha",
+    "location": "Madri, Espanha",
     "phone": "+34 647 14 08 18"
   },
   "footer": {
@@ -87,28 +99,28 @@
     "english": "Inglês",
     "portuguese": "Português"
   },
- "metin2Page": {
+  "metin2Page": {
     "video": {
       "title": "",
       "subtitle": ""
     },
     "experience": {
-      "title": "Experiência",
+      "title": "Experiência Metin2",
       "items": [
         {
-          "title": "Sistema de Loja Offline",
-          "description": "Desenvolvi um sistema completo de loja offline para Metin2, permitindo que os jogadores vendam itens mesmo quando não estão online. Este sistema inclui transações seguras, uma base de dados persistente e uma interface intuitiva para gerir itens e preços.",
-          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+          "title": "C++ - Desenvolvimento de Motor & Otimização de Performance",
+          "description": "Desenvolvimento de sistemas C++ personalizados para servidores privados de Metin2, com foco em otimização de performance e estabilidade do cliente. Resolução de memory leaks através de debugging avançado e análise de memory footprint. Otimização de gestão de recursos do jogo (texturas, malhas, áudio) com lazy loading e estratégias de caching. Refatoração de código legacy para melhorar maintainability e reduzir crashes do cliente. Implementação de custom memory allocators e profiling tools para identificar gargalos de performance.",
+          "image": "https://i.ibb.co/6cSfCN36/cpp-wallpaper.pnghttps://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
         },
         {
-          "title": "Framework de Missões Dinâmicas",
-          "description": "Projetei um framework modular para criar missões em Lua e Python. Isto permitiu que os desenvolvedores criassem rapidamente novas missões com eventos dinâmicos, diálogos complexos e recompensas personalizadas, melhorando significativamente a experiência de jogo.",
-          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+          "title": "Python - Arquitetura de Sistemas de Jogo & Automação",
+          "description": "Desenvolvimento de interfaces híbridas Python-C++ para melhorar experiência do usuário e interação do jogo. Criação de sistemas de diálogo dinâmicos e quest trackers integrados. Automação de processos de deployment e testing através de scripts personalizados. Desenvolvimento de ferramentas para criação de conteúdo e gestão de configurações. Implementação de event system modulares para conteúdos sazonais.",
+          "image": "https://i.ibb.co/QByxJrJ/python-wallpaper.png"
         },
         {
-          "title": "Gestão Avançada de Base de Dados",
-          "description": "Otimizei e geri a base de dados do jogo (MySQL/MariaDB) para garantir a máxima eficiência e estabilidade. Isto incluiu a conceção de tabelas para dados dos jogadores, inventário e registos do sistema, bem como a implementação de procedimentos de backup e restauro.",
-          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+          "title": "MySQL/MariaDB - Arquitetura de Banco de Dados & Escalabilidade",
+          "description": "Arquitetura de banco de dados escalável para gestão de configurações de jogo dinâmicas via SQL. Implementação de sistemas de settings centralizados para regras de gameplay, parâmetros de balance e conteúdos configuráveis. Desenvolvimento de stored procedures para hot-reloading de configurações sem downtime. Otimização de queries para acesso real-time a milhares de parâmetros configuráveis. Gestão de versioning de configurações e rollbacks automáticos.",
+          "image": "https://i.ibb.co/whWcQ8zJ/navicat-wallpaper.png"
         }
       ]
     },
@@ -116,25 +128,25 @@
       "title": "Outros Trabalhos",
       "items": [
         {
-          "title": "Interface de Login",
-          "description": "Criação de uma interface de login personalizada.",
+          "title": "Lua - Sistema de Quest Personalizado & Lógica de Jogo",
+          "description": "Desenvolvimento de sistemas de quest avançados em Lua para criação de missões personalizadas e eventos dinâmicos. Implementação de scripts para comportamento de NPC, diálogos interativos e mecânicas de jogo únicas. Criação de frameworks modulares para desenvolvimento rápido de conteúdos e sistemas de recompensas complexos.",
           "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
         },
         {
-          "title": "Sistema de Criação",
-          "description": "Desenvolvimento de um sistema de criação para novos itens.",
+          "title": "Bibliotecas de Desenvolvimento & Qualidade de Código",
+          "description": "Criação de bibliotecas internas e utilitários para otimizar workflow de desenvolvimento. Escrita de código limpo e documentado para melhorar maintainability e colaboração da equipe. Desenvolvimento de helper functions e wrappers para acelerar desenvolvimento de novas features.",
           "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
         },
         {
-          "title": "Evento de Pesca",
-          "description": "Scripting de um evento de pesca com recompensas únicas.",
+          "title": "Painéis Automatizados de Gestão de Staff",
+          "description": "Desenvolvimento de painéis administrativos automatizados para gestão eficiente da staff do jogo. Implementação de ferramentas de moderação real-time, sistemas de relatórios automáticos e dashboards de monitoramento. Criação de interfaces intuitivas para ban management, análise de logs e suporte a jogadores. Automação de tarefas repetitivas para melhorar produtividade e tempos de resposta.",
           "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
         }
       ]
     },
     "conclusion": {
-      "title": "Conclusão",
-      "text": "Estes são apenas alguns exemplos do meu trabalho no Metin2. Se estiver interessado em ver outros projetos ou discutir uma possível colaboração, sinta-se à vontade para voltar à minha secção de trabalhos.",
+      "title": "Arquiteturas Escaláveis & Soluções Personalizadas",
+      "text": "Os projetos apresentados representam soluções end-to-end desenvolvidas para otimizar performance, experiência do usuário e gestão operacional do Metin2. Cada implementação foi projetada pensando em escalabilidade, maintainability e necessidades específicas da comunidade. Estou disponível para discutir como estas competências podem ser aplicadas ao seu projeto, com foco em arquiteturas robustas e código de qualidade enterprise-grade.",
       "button": "Voltar aos Trabalhos"
     }
   }

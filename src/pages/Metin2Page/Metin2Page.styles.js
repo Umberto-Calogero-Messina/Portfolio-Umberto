@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 import { mq } from '../../Styles/styledSystem';
+import heroBanner from '../../assets/images/banner-scaled.jpg';
 
 export const Metin2PageContainer = styled.div`
-  background-color: #f4f4f4;
+  background-image: url(${heroBanner});
+    background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #333;
   text-align: center;
 `;
@@ -29,6 +33,7 @@ export const HeroSection = styled.section`
 `;
 
 export const VideoBackground = styled.iframe`
+background-color: black;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -73,12 +78,7 @@ ${mq.tablet} {
 `;
 
 // --- Experience Section ---
-import heroBanner from '../../assets/images/banner-scaled.jpg';
 export const ExperienceSection = styled(BaseSection)`
-  background-image: url(${heroBanner});
-    background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover;
   color:var(--color-bg-light);
 `;
 
