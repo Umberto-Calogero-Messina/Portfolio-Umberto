@@ -37,9 +37,9 @@ const Navbar = () => {
           </Link>
         </Logo>
         <Links open={open}>
-          <li>{getLink('/', t('navbar.home'), true)}</li>
+          <li>{getLink('/#home', t('navbar.home'))}</li>
           <li>{getLink('/#about', t('navbar.about'))}</li>
-          <li>{getLink('/#portfolio', t('navbar.projects'))}</li>
+          <li>{getLink('/#project', t('navbar.projects'))}</li>
           <li>{getLink('/#contact', t('navbar.contact'))}</li>
           <li>
             <LanguageSelector />

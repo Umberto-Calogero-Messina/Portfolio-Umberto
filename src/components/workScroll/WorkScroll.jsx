@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
@@ -14,34 +15,35 @@ import {
   ProgressContainer,
   ProgressBackground,
   ProgressForeground,
-  Cover
+  Cover,
+  SectionScroll
 } from './WorkScroll.styles';
 
 // Static data (non-translatable)
 const staticData = [
   {
     image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
-    link: 'https://github.com/Umberto-Calogero-Messina/Portfolio'
+    link: '/metin2'
   },
   {
     image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
-    link: 'https://github.com/Umberto-Calogero-Messina/YourDashboardRepo'
+    link: '/metin2'
   },
   {
     image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
-    link: 'https://github.com/Umberto-Calogero-Messina/YourEcommerceRepo'
+    link: '/metin2'
   },
   {
     image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
-    link: '/projects/metin2-offline-shop'
+    link: '/projects/workInProgress'
   },
   {
     image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
-    link: '/projects/metin2-quest-framework'
+    link: '/projects/workInProgress'
   },
   {
     image: 'https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg',
-    link: '/projects/metin2-database-management'
+    link: '/projectsworkInProgress'
   }
 ];
 
@@ -49,6 +51,7 @@ const AUTO_SCROLL_INTERVAL = 4000;
 
 const WorkScroll = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [progressBarWidth, setProgressBarWidth] = useState(0);
@@ -375,7 +378,7 @@ const WorkScroll = () => {
       newOrder.unshift(lastCard);
       const newDetailsEven = !state.detailsEven;
 
-      const [active, next, ...rest] = newOrder;
+      const [active, , ...rest] = newOrder;
       const previousActive = newOrder[1];
       const detailsActive = newDetailsEven ? detailsEvenRef.current : detailsOddRef.current;
       const detailsInactive = newDetailsEven ? detailsOddRef.current : detailsEvenRef.current;
@@ -482,12 +485,20 @@ const WorkScroll = () => {
     resetAutoScroll();
   }, [isAnimating, stopAutoScroll, stepBackward, resetAutoScroll]);
 
-  const handleDiscoverClick = useCallback(link => {
-    // Naviga alla pagina specificata
-    window.location.href = link;
-    // Oppure, se stai usando React Router:
-    // navigate(link);
-  }, []);
+  const handleDiscoverClick = useCallback(
+    link => {
+      if (link) {
+        if (link.startsWith('/') || link.startsWith('#')) {
+          navigate(link);
+          // Scroll to top after navigation
+          setTimeout(() => window.scrollTo(0, 0), 0);
+        } else {
+          window.open(link, '_blank', 'noopener,noreferrer');
+        }
+      }
+    },
+    [navigate]
+  );
 
   // Image loading
   const loadImage = src => {
@@ -567,63 +578,62 @@ const WorkScroll = () => {
   const progressWidth = progressBarWidth * ((currentIndex + 1) / data.length);
 
   return (
-    <MainContainer ref={mainContainerRef}>
-      {renderCards()}
+    <SectionScroll id='project'>
+      <MainContainer ref={mainContainerRef}>
+        {renderCards()}
 
-      <Details ref={detailsEvenRef} style={{ opacity: 0 }}>
-        <TitleBox className='title-box'>
-          <div className='title'>{data[stateRef.current.order[0]]?.title}</div>
-        </TitleBox>
+        <Details ref={detailsEvenRef} style={{ opacity: 0 }}>
+          <TitleBox className='title-box'>
+            <div className='title'>{data[stateRef.current.order[0]]?.title}</div>
+          </TitleBox>
 
-        <Desc className='desc'>{data[stateRef.current.order[0]]?.description}</Desc>
+          <Desc className='desc'>{data[stateRef.current.order[0]]?.description}</Desc>
 
-        <Cta className='cta'>
-          <DiscoverButton
-            className='discover'
-            onClick={() => handleDiscoverClick(data[stateRef.current.order[0]]?.link)}
-          >
-            Discover
-          </DiscoverButton>
-        </Cta>
-      </Details>
+          <Cta className='cta'>
+            <DiscoverButton className='discover' onClick={() => handleDiscoverClick(data[currentIndex]?.link)}>
+              Discover
+            </DiscoverButton>
+          </Cta>
+        </Details>
 
-      <Details ref={detailsOddRef}>
-        <TitleBox className='title-box'>
-          <div className='title'>{data[stateRef.current.order[0]]?.title}</div>
-        </TitleBox>
+        <Details ref={detailsOddRef}>
+          <TitleBox className='title-box'>
+            <div className='title'>{data[stateRef.current.order[0]]?.title}</div>
+          </TitleBox>
 
-        <Desc className='desc'>{data[stateRef.current.order[0]]?.description}</Desc>
+          <Desc className='desc'>{data[stateRef.current.order[0]]?.description}</Desc>
 
-        <Cta className='cta'>
-          <DiscoverButton
-            className='discover'
-            onClick={() => handleDiscoverClick(data[stateRef.current.order[0]]?.link)}
-          >
-            Discover
-          </DiscoverButton>
-        </Cta>
-      </Details>
+          <Cta className='cta'>
+            <DiscoverButton
+              className='discover'
+              onClick={() => handleDiscoverClick(data[stateRef.current.order[0]]?.link)}
+            >
+              Discover
+            </DiscoverButton>
+          </Cta>
+        </Details>
 
-      <Pagination ref={paginationRef}>
-        <Arrow onClick={handlePrev} className='arrow-left'>
-          <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-            <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' />
-          </svg>
-        </Arrow>
-        <Arrow onClick={handleNext} className='arrow-right'>
-          <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-            <path strokeLinecap='round' strokeLinejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' />
-          </svg>
-        </Arrow>
-        <ProgressContainer>
-          <ProgressBackground ref={progressBackgroundRef}>
-            <ProgressForeground ref={progressForegroundRef} style={{ width: `${progressWidth}px` }} />
-          </ProgressBackground>
-        </ProgressContainer>
-      </Pagination>
+        <Pagination ref={paginationRef}>
+          <Arrow onClick={handlePrev} className='arrow-left'>
+            <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+              <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' />
+            </svg>
+          </Arrow>
+          <Arrow onClick={handleNext} className='arrow-right'>
+            <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+              <path strokeLinecap='round' strokeLinejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' />
+            </svg>
+          </Arrow>
+          <ProgressContainer>
+            <ProgressBackground ref={progressBackgroundRef}>
+              <ProgressForeground ref={progressForegroundRef} style={{ width: `${progressWidth}px` }} />
+            </ProgressBackground>
+          </ProgressContainer>
+        </Pagination>
 
-      <Cover ref={coverRef} />
-    </MainContainer>
+        <Cover ref={coverRef} />
+      </MainContainer>
+    </SectionScroll>
   );
 };
 

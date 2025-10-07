@@ -86,5 +86,56 @@
     "spanish": "Espanhol",
     "english": "Inglês",
     "portuguese": "Português"
+  },
+ "metin2Page": {
+    "video": {
+      "title": "",
+      "subtitle": ""
+    },
+    "experience": {
+      "title": "Experiência",
+      "items": [
+        {
+          "title": "Sistema de Loja Offline",
+          "description": "Desenvolvi um sistema completo de loja offline para Metin2, permitindo que os jogadores vendam itens mesmo quando não estão online. Este sistema inclui transações seguras, uma base de dados persistente e uma interface intuitiva para gerir itens e preços.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Framework de Missões Dinâmicas",
+          "description": "Projetei um framework modular para criar missões em Lua e Python. Isto permitiu que os desenvolvedores criassem rapidamente novas missões com eventos dinâmicos, diálogos complexos e recompensas personalizadas, melhorando significativamente a experiência de jogo.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Gestão Avançada de Base de Dados",
+          "description": "Otimizei e geri a base de dados do jogo (MySQL/MariaDB) para garantir a máxima eficiência e estabilidade. Isto incluiu a conceção de tabelas para dados dos jogadores, inventário e registos do sistema, bem como a implementação de procedimentos de backup e restauro.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        }
+      ]
+    },
+    "cards": {
+      "title": "Outros Trabalhos",
+      "items": [
+        {
+          "title": "Interface de Login",
+          "description": "Criação de uma interface de login personalizada.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Sistema de Criação",
+          "description": "Desenvolvimento de um sistema de criação para novos itens.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Evento de Pesca",
+          "description": "Scripting de um evento de pesca com recompensas únicas.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Conclusão",
+      "text": "Estes são apenas alguns exemplos do meu trabalho no Metin2. Se estiver interessado em ver outros projetos ou discutir uma possível colaboração, sinta-se à vontade para voltar à minha secção de trabalhos.",
+      "button": "Voltar aos Trabalhos"
+    }
   }
 }

@@ -19,27 +19,27 @@ import {
 } from './Education.styles';
 
 const SkillsItems = [
-  { id: 1, name: 'HTML', score: 90, icon: 'html' },
-  { id: 2, name: 'CSS', score: 85, icon: 'css' },
-  { id: 3, name: 'JavaScript', score: 80, icon: 'javascript' },
-  { id: 4, name: 'Python', score: 70, icon: 'python' },
-  { id: 5, name: 'Photoshop', score: 60, icon: 'photoshop' },
-  { id: 6, name: 'C++', score: 50, icon: 'c++' }
+  { id: 1, name: 'HTML', score: 80, icon: 'html' },
+  { id: 2, name: 'CSS', score: 80, icon: 'css' },
+  { id: 3, name: 'JavaScript', score: 85, icon: 'javascript' },
+  { id: 4, name: 'React', score: 65, icon: 'react' },
+  { id: 5, name: 'Python', score: 55, icon: 'python' },
+  { id: 6, name: 'C++', score: 60, icon: 'c++' }
 ];
 
 import htmlIcon from '../../assets/icons/html.png';
 import cssIcon from '../../assets/icons/css.png';
 import jsIcon from '../../assets/icons/javascript.png';
 import pythonIcon from '../../assets/icons/python.png';
-import photoshopIcon from '../../assets/icons/photoshop.png';
+import reactIcon from '../../assets/icons/react.png';
 import cppIcon from '../../assets/icons/c++.png';
 
 const icons = {
   html: htmlIcon,
   css: cssIcon,
   javascript: jsIcon,
+  react: reactIcon,
   python: pythonIcon,
-  photoshop: photoshopIcon,
   'c++': cppIcon
 };
 

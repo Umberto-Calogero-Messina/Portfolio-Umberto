@@ -186,15 +186,23 @@ const Contact = () => {
 
             <SocialSection>
               <SocialIcons>
-                <SocialIconLink href='https://github.com/yourprofile' target='_blank' rel='noopener noreferrer'>
+                <SocialIconLink
+                  href='https://github.com/Umberto-Calogero-Messina'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <SocialIcon src={githubIcon} alt='GitHub' />
                 </SocialIconLink>
 
-                <SocialIconLink href='https://linkedin.com/in/yourprofile' target='_blank' rel='noopener noreferrer'>
+                <SocialIconLink
+                  href='https://www.linkedin.com/in/umberto-calogero-messina-9b716026b/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <SocialIcon src={linkedinIcon} alt='LinkedIn' />
                 </SocialIconLink>
 
-                <SocialIconLink href='https://wa.me/yourwhatsappnumber' target='_blank' rel='noopener noreferrer'>
+                <SocialIconLink href='https://wa.me/+34647140818' target='_blank' rel='noopener noreferrer'>
                   <SocialIcon src={whatsappIcon} alt='WhatsApp' />
                 </SocialIconLink>
               </SocialIcons>

@@ -12,6 +12,7 @@ export const Title = styled.h3`
   font-weight: 500;
   letter-spacing: 1.4px;
   text-transform: uppercase;
+  text-align:justify;
   margin-bottom: 15px;
   color: var(--color-accent);
   text-align: center;

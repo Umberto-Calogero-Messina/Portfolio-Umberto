@@ -41,7 +41,7 @@ const pillButton = `
 
 // Components
 export const SectionScroll = styled.section`
-background-color: black;
+  background-color: var(--color-bg-darkblue); 
 `;
 
 export const MainContainer = styled.div`
@@ -77,7 +77,7 @@ export const Card = styled.div`
 
 export const Details = styled.div`
   position: absolute;
-  top: 50px;
+  top: 90px;
   left: 16px;
   color: ${textColor};
   font-family: ${fontPrimary};
@@ -85,11 +85,11 @@ export const Details = styled.div`
 
   ${mq.tablet} {
     left: 48px;
-    top: 30px;
+    top: 90px;
   }
 
   ${mq.laptop} {
-    top: 350px;
+    top: 210px;
     left: 60px;
   }
 
@@ -105,32 +105,31 @@ export const TitleBox = styled.div`
   margin-bottom: 10px;
 
   ${mq.tablet} {
-    min-height: 85px;
   }
 
   ${mq.laptop} {
-    min-height: 100px;
   }
 
   ${mq.desktop} {
-    min-height: 120px;
   }
 
   .title {
     ${fontOswald}
-    font-size: 40px;
+    font-size: 30px;
     line-height: 1;
+    height:100%;
+    padding-block:10px;
 
     ${mq.tablet} {
       font-size: 50px;
     }
 
     ${mq.laptop} {
-      font-size: 60px;
+      font-size: 50px;
     }
 
     ${mq.desktop} {
-      font-size: 70px;
+      font-size: 60px;
     }
   }
 `;

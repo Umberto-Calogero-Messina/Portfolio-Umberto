@@ -41,23 +41,29 @@
     "title": "Mis trabajos",
     "items": [
       {
-        "title": "Proyecto 1",
-        "description": "Descripción del proyecto 1"
+        "title": "Sitio Web de Portfolio Personal",
+        "description": "Un portfolio responsive construido con React y Vite para mostrar mi experiencia profesional, proyectos e información de contacto. Incluye soporte multilingüe y hooks personalizados para una gestión eficiente del estado."
       },
       {
-        "title": "Proyecto 2",
-        "description": "Descripción del proyecto 2"
+        "title": "Dashboard Web Interactivo",
+        "description": "Un dashboard front-end moderno diseñado con React, Styled Components y librerías de gráficos para análisis en tiempo real y visualización dinámica de datos."
       },
       {
-        "title": "Proyecto 3",
-        "description": "Descripción del proyecto 3"
+        "title": "Página de Destino E-Commerce",
+        "description": "Una aplicación de página única de alto rendimiento optimizada para SEO y conversión, construida con React y Vite."
       },
       {
-        "title": "Proyecto 4",
-        "description": "Descripción del proyecto 4"
+        "title": "Metin2 — Sistema de Tienda Offline",
+        "description": "Desarrollado un sistema de tienda offline completamente funcional en C++ y Python para Metin2. Implementadas transacciones seguras, almacenamiento persistente de datos en MySQL e interfaces amigables para los jugadores."
       },
-      { "title": "Proyecto 5", "description": "Descripción del proyecto 5" },
-      { "title": "Proyecto 6", "description": "Descripción del proyecto 6" }
+      {
+        "title": "Metin2 — Framework de Misiones y Quests",
+        "description": "Diseñado y programado un sistema de misiones modular utilizando Lua y Python, permitiendo el manejo dinámico de eventos y el flujo narrativo en el juego para servidores privados de Metin2."
+      },
+      {
+        "title": "Metin2 — Gestión de Base de Datos del Juego",
+        "description": "Diseñada una lógica de base de datos robusta en MySQL/MariaDB para una gestión eficiente de los datos de los jugadores, almacenamiento de objetos y sincronización del sistema para mejorar la estabilidad del juego."
+      }
     ]
   },
   "contact": {
@@ -86,5 +92,56 @@
     "spanish": "Español",
     "english": "Inglés",
     "portuguese": "Portugués"
+  },
+"metin2Page": {
+    "video": {
+      "title": "",
+      "subtitle": ""
+    },
+    "experience": {
+      "title": "Experiencia",
+      "items": [
+        {
+          "title": "Sistema de Tienda Offline",
+          "description": "Desarrollé un sistema completo de tienda offline para Metin2, permitiendo a los jugadores vender objetos incluso cuando no están en línea. Este sistema incluye transacciones seguras, una base de datos persistente y una interfaz intuitiva para gestionar objetos y precios.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Framework de Misiones Dinámicas",
+          "description": "Diseñé un framework modular para crear misiones en Lua y Python. Esto permitió a los desarrolladores crear rápidamente nuevas misiones con eventos dinámicos, diálogos complejos y recompensas personalizadas, mejorando significativamente la experiencia de juego.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Gestión Avanzada de Base de Datos",
+          "description": "Optimicé y gestioné la base de datos del juego (MySQL/MariaDB) para garantizar máxima eficiencia y estabilidad. Esto incluyó diseñar tablas para datos de jugadores, inventario y registros del sistema, así como implementar procedimientos de backup y restauración.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        }
+      ]
+    },
+    "cards": {
+      "title": "Otros Trabajos",
+      "items": [
+        {
+          "title": "Interfaz de Login",
+          "description": "Creación de una interfaz de login personalizada.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Sistema de Crafteo",
+          "description": "Desarrollo de un sistema de crafteo para nuevos objetos.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Evento de Pesca",
+          "description": "Scripting de un evento de pesca con recompensas únicas.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Conclusión",
+      "text": "Estos son solo algunos ejemplos de mi trabajo en Metin2. Si estás interesado en ver otros proyectos o discutir una posible colaboración, siéntete libre de volver a mi sección de trabajos.",
+      "button": "Volver a Trabajos"
+    }
   }
 }

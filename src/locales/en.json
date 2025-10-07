@@ -1,3 +1,4 @@
+
 {
   "navbar": {
     "home": "Home",
@@ -92,5 +93,56 @@
     "spanish": "Spanish",
     "english": "English",
     "portuguese": "Portuguese"
+  },
+  "metin2Page": {
+    "video": {
+      "title": "",
+      "subtitle": ""
+    },
+    "experience": {
+      "title": "Experience",
+      "items": [
+        {
+          "title": "Offline Shop System",
+          "description": "I developed a complete offline shop system for Metin2, allowing players to sell items even when they are not online. This system includes secure transactions, a persistent database, and an intuitive user interface for managing items and prices.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Dynamic Quest Framework",
+          "description": "I designed a modular framework for creating quests in Lua and Python. This allowed developers to quickly create new missions with dynamic events, complex dialogues, and custom rewards, significantly improving the gaming experience.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Advanced Database Management",
+          "description": "I optimized and managed the game database (MySQL/MariaDB) to ensure maximum efficiency and stability. This included designing tables for player data, inventory, and system logs, as well as implementing backup and restore procedures.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        }
+      ]
+    },
+    "cards": {
+      "title": "Other Works",
+      "items": [
+        {
+          "title": "Login Interface",
+          "description": "Creation of a custom login interface.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Crafting System",
+          "description": "Development of a crafting system for new items.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        },
+        {
+          "title": "Fishing Event",
+          "description": "Scripting of a fishing event with unique rewards.",
+          "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "text": "These are just a few examples of my work on Metin2. If you are interested in seeing other projects or discussing a possible collaboration, feel free to return to my work section.",
+      "button": "Back to Works"
+    }
   }
 }
