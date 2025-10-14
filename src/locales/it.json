@@ -47,6 +47,15 @@
     "discover": "Scorpi di più",
     "title": "I miei lavori",
 "items": [
+
+    {
+        "title": "Front-End Web Design - Creative Portfolio",
+        "description": "Progettazione e sviluppo di una homepage interattiva per un portfolio di videografi, con focus su UI/UX, layout responsivo, tipografia raffinata e animazioni sottili. Implementazione di sezioni dinamiche per servizi, portfolio e contatti, ottimizzate per performance e accessibilità."
+    },
+    {
+        "title": "Front-End Web Development - To-Do List Application",
+        "description": "Sviluppo di un'applicazione To-Do moderna e responsiva, con gestione di task attivi e completati, interazioni intuitive, modalità chiara/scura e design minimale. Implementazione di filtri, controllo dello stato dei task e interfaccia user-friendly per migliorare la produttività quotidiana."
+    },
     {
         "title": "Architettura C++ - Engine & Performance",
         "description": "Sviluppo di sistemi core ottimizzati per Metin2 con C++, focusing su memory management avanzato, ottimizzazione delle prestazioni e risoluzione di memory leak. Implementazione di algoritmi efficienti per la gestione real-time di migliaia di concorrenti."
@@ -58,18 +67,6 @@
     {
         "title": "MySQL/MariaDB - Database Architecture",
         "description": "Architettura di database scalabili per la gestione di configurazioni dinamiche e dati di gioco in tempo reale. Implementazione di stored procedures avanzate, query ottimizzate e sistemi di backup automatizzati per alta disponibilità."
-    },
-    {
-        "title": "Work in Progress",
-        "description": "Front-End Developer"
-    },
-    {
-        "title": "Work in Progress", 
-        "description": "Progetti Web"
-    },
-    {
-        "title": "Work in Progress",
-        "description": "React"
     }
 ]
   },
@@ -148,6 +145,57 @@
     "conclusion": {
       "title": "Architetture Scalabili & Soluzioni Personalizzate",
       "text": "I progetti presentati rappresentano soluzioni end-to-end sviluppate per ottimizzare performance, user experience e gestione operativa di Metin2. Ogni implementazione è stata progettata pensando alla scalabilità, mantenibilità e alle esigenze specifiche della community. Sono disponibile per discutere come queste competenze possano essere applicate al vostro progetto, con focus su architetture robuste e codice di qualità enterprise-grade.",
+      "button": "Torna ai Lavori"
+    }
+  },
+"frontPage": {
+    "video": {
+      "title": "",
+      "subtitle": ""
+    },
+    "experience": {
+      "title": "Esperienza Front-End",
+      "items": [
+        {
+          "title": "React - Advanced Component Architecture & State Management",
+          "description": "Progettazione e sviluppo di architetture React scalabili basate su componenti riutilizzabili, con particolare attenzione a performance e manutenibilità. Implementazione di pattern avanzati per la gestione dello stato (Context API, Redux Toolkit, React Query) e ottimizzazione del rendering tramite memoization e code-splitting. Integrazione con API REST e GraphQL per la gestione dinamica dei dati e creazione di interfacce reattive e accessibili a livello enterprise.",
+          "image": "https://i.ibb.co/nGVx7Jd/photo-1633356122102-3fe601e05bd2.jpg"
+        },
+        {
+          "title": "JavaScript - Application Logic & Interactive Systems",
+          "description": "Sviluppo di logiche applicative in JavaScript ES6+, con focus su architetture modulari e asincrone basate su Promises e async/await. Implementazione di pattern architetturali come MVC per interfacce interattive e dinamiche. Creazione di moduli autonomi per la gestione degli eventi, validazione dei dati, ottimizzando prestazioni, compatibilità cross-browser e accessibilità WCAG.",
+          "image": "https://i.ibb.co/VpHF3Sm6/1-WSXKXYSzz-Ms-QYiiipk-H1-Aw.jpg"
+        },
+        {
+          "title": "HTML/CSS - Semantic Architecture & Advanced UI Styling",
+          "description": "Progettazione di interfacce responsive e semantiche con HTML5 e CSS3, basate su un design system modulare. Utilizzo avanzato di Flexbox, CSS Grid e variabili CSS per la creazione di layout dinamici e mantenibili. Implementazione di animazioni fluide con keyframes e transizioni, ottimizzazione del rendering e rispetto delle best practices per performance, SEO e accessibilità. Integrazione di preprocessori e metodologie BEM/SASS per una struttura di codice scalabile e pulita.",
+          "image": "https://i.ibb.co/PsztX6L2/Wr-VXNyz-Suyzh2-Kv-Lo-At-L-thumbnail.png"
+        }
+      ]
+    },
+    "cards": {
+      "title": "Altri Lavori",
+      "items": [
+        {
+          "title": "Advanced Password Generator",
+          "description": "Sviluppo di un tool avanzato per la generazione sicura di password, con opzioni di personalizzazione per lunghezza, complessità e simboli speciali. Implementazione di criteri di sicurezza aggiornati e interfaccia user-friendly per una protezione ottimale dei dati.",
+          "image": "https://i.ibb.co/k2pdQcfZ/Sf-Kwd4-TOStae0qv3-IVbc-MA.png"
+        },
+        {
+          "title": "Wordle Game Clone",
+          "description": "Gioco di parole interattivo sviluppato con HTML, CSS e JavaScript, con griglia 5x6 e tastiera virtuale, feedback visivo dinamico per lettere corrette/posizioni corrette, gestione degli stati di gioco (vittoria/sconfitta), ottimizzato per desktop e mobile, codice modulare e manutenibile, esperienza fluida e minimalista.",
+          "image": "https://i.ibb.co/ynQ305qT/Wordle-preview.jpg"
+        },
+        {
+          "title": "Social Card Component",
+          "description": "Componente UI modulare per visualizzare contenuti social con avatar, post, commenti e badge personalizzabili. Ottimizzato per riuso in diversi progetti front-end, con design responsive e animazioni fluide. Strutturato in modo modulare per facilitare integrazione e manutenzione, garantendo un'esperienza utente coerente e moderna.",
+          "image": "https://i.ibb.co/k6402LLX/lv-ZKQJKSR4-Wfi2z1b3-LXjg.png"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Architetture Scalabili & Soluzioni Personalizzate",
+      "text": "I progetti presentati costituiscono una panoramica del mio percorso nello sviluppo front-end, con un focus sull’architettura di interfacce, l’ottimizzazione delle performance e la qualità del codice. Ogni implementazione è stata progettata considerando la scalabilità, la manutenibilità e l’accessibilità, garantendo esperienze utente fluide e coerenti su dispositivi diversi. Ho adottato metodologie moderne di sviluppo, pattern architetturali consolidati e best practice di engineering per assicurare che le applicazioni siano robuste, modulari e facilmente estendibili. Questo insieme di esperienze riflette la mia capacità di affrontare sfide complesse nello sviluppo web, bilanciando estetica, funzionalità e performance tecnica.",
       "button": "Torna ai Lavori"
     }
   }

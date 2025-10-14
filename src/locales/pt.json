@@ -46,30 +46,26 @@
     "discover": "Descobrir mais",
     "title": "Meus trabalhos",
     "items": [
-      {
-        "title": "Arquitetura C++ - Motor & Performance",
-        "description": "Desenvolvimento de sistemas core otimizados para Metin2 com C++, focado em gestão avançada de memória, otimização de performance e resolução de memory leaks. Implementação de algoritmos eficientes para gestão real-time de milhares de concorrentes."
-      },
-      {
-        "title": "Python - Sistemas de Jogo & Automação",
-        "description": "Design de frameworks modulares em Python para sistemas de jogo dinâmicos, automação de processos e desenvolvimento de ferramentas internas. Criação de APIs híbridas Python-C++ para experiências de usuário fluidas e personalizáveis."
-      },
-      {
-        "title": "MySQL/MariaDB - Arquitetura de Banco de Dados",
-        "description": "Arquitetura de bancos de dados escaláveis para gestão de configurações dinâmicas e dados de jogo em tempo real. Implementação de stored procedures avançadas, queries otimizadas e sistemas de backup automatizados para alta disponibilidade."
-      },
-      {
-        "title": "Trabalho em Progresso",
-        "description": "Desenvolvedor Front-End"
-      },
-      {
-        "title": "Trabalho em Progresso",
-        "description": "Projetos Web"
-      },
-      {
-        "title": "Trabalho em Progresso",
-        "description": "React"
-      }
+        {
+            "title": "Design Web Front-End - Portfólio Criativo",
+            "description": "Projeto e desenvolvimento de uma página inicial interativa para um portfólio de videógrafos, com foco em UI/UX, layout responsivo, tipografia refinada e animações sutis. Implementação de seções dinâmicas para serviços, portfólio e contatos, otimizadas para performance e acessibilidade."
+        },
+        {
+            "title": "Desenvolvimento Web Front-End - Aplicação de Lista de Tarefas",
+            "description": "Desenvolvimento de uma aplicação de lista de tarefas moderna e responsiva, com gerenciamento de tarefas ativas e concluídas, interações intuitivas, modo claro/escuro e design minimalista. Implementação de filtros, controle de status de tarefas e uma interface amigável para melhorar a produtividade diária."
+        },
+        {
+            "title": "Arquitetura C++ - Motor e Desempenho",
+            "description": "Desenvolvimento de sistemas de núcleo otimizados para Metin2 com C++, com foco em gerenciamento avançado de memória, otimização de desempenho e resolução de vazamentos de memória. Implementação de algoritmos eficientes para o gerenciamento em tempo real de milhares de usuários concorrentes."
+        },
+        {
+            "title": "Python - Sistemas de Jogo e Automação",
+            "description": "Projeto de frameworks modulares em Python para sistemas de jogos dinâmicos, automação de processos e desenvolvimento de ferramentas internas. Criação de APIs híbridas Python-C++ para experiências de usuário fluidas e personalizáveis."
+        },
+        {
+            "title": "MySQL/MariaDB - Arquitetura de Banco de Dados",
+            "description": "Arquitetura de bancos de dados escaláveis para o gerenciamento de configurações dinâmicas de jogo e dados de jogo em tempo real. Implementação de stored procedures avançadas, consultas otimizadas e sistemas de backup automatizados para alta disponibilidade."
+        }
     ]
   },
   "contact": {
@@ -134,12 +130,12 @@
         },
         {
           "title": "Bibliotecas de Desenvolvimento & Qualidade de Código",
-          "description": "Criação de bibliotecas internas e utilitários para otimizar workflow de desenvolvimento. Escrita de código limpo e documentado para melhorar maintainability e colaboração da equipe. Desenvolvimento de helper functions e wrappers para acelerar desenvolvimento de novas features.",
+          "description": "Criação de bibliotecas internas e utilitários para otimizar workflow de desenvolvimento. Escrita de código limpo e documentado para mejorar maintainability e colaboração da equipe. Desenvolvimento de helper functions e wrappers para acelerar desenvolvimento de novas features.",
           "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
         },
         {
           "title": "Painéis Automatizados de Gestão de Staff",
-          "description": "Desenvolvimento de painéis administrativos automatizados para gestão eficiente da staff do jogo. Implementação de ferramentas de moderação real-time, sistemas de relatórios automáticos e dashboards de monitoramento. Criação de interfaces intuitivas para ban management, análise de logs e suporte a jogadores. Automação de tarefas repetitivas para melhorar produtividade e tempos de resposta.",
+          "description": "Desenvolvimento de painéis administrativos automatizados para gestão eficiente da staff do jogo. Implementação de ferramentas de moderação real-time, sistemas de relatórios automáticos e dashboards de monitoramento. Criação de interfaces intuitivas para ban management, análise de logs e suporte a jogadores. Automação de tarefas repetitivas para mejorar produtividade e tempos de resposta.",
           "image": "https://en-wiki.metin2.gameforge.com/images/1/1f/184header.jpg"
         }
       ]
@@ -147,6 +143,57 @@
     "conclusion": {
       "title": "Arquiteturas Escaláveis & Soluções Personalizadas",
       "text": "Os projetos apresentados representam soluções end-to-end desenvolvidas para otimizar performance, experiência do usuário e gestão operacional do Metin2. Cada implementação foi projetada pensando em escalabilidade, maintainability e necessidades específicas da comunidade. Estou disponível para discutir como estas competências podem ser aplicadas ao seu projeto, com foco em arquiteturas robustas e código de qualidade enterprise-grade.",
+      "button": "Voltar aos Trabalhos"
+    }
+  },
+  "frontPage": {
+    "video": {
+      "title": "",
+      "subtitle": ""
+    },
+    "experience": {
+      "title": "Experiência Front-End",
+      "items": [
+        {
+          "title": "React - Arquitetura Avançada de Componentes e Gerenciamento de Estado",
+          "description": "Projeto e desenvolvimento de arquiteturas React escaláveis baseadas em componentes reutilizáveis, com foco em desempenho e manutenibilidade. Implementação de padrões avançados para gerenciamento de estado (Context API, Redux Toolkit, React Query) e otimização de renderização através de memoization e code-splitting. Integração com APIs REST e GraphQL para gerenciamento dinâmico de dados e criação de interfaces reativas e acessíveis em nível empresarial.",
+          "image": "https://i.ibb.co/nGVx7Jd/photo-1633356122102-3fe601e05bd2.jpg"
+        },
+        {
+          "title": "JavaScript - Lógica de Aplicação e Sistemas Interativos",
+          "description": "Desenvolvimento de lógicas de aplicação em JavaScript ES6+, com foco em arquiteturas modulares e assíncronas baseadas em Promises e async/await. Implementação de padrões de arquitetura como MVC para interfaces interativas e dinâmicas. Criação de módulos autônomos para manipulação de eventos, validação de dados, otimizando desempenho, compatibilidade entre navegadores e acessibilidade WCAG.",
+          "image": "https://i.ibb.co/VpHF3Sm6/1-WSXKXYSzz-Ms-QYiiipk-H1-Aw.jpg"
+        },
+        {
+          "title": "HTML/CSS - Arquitetura Semântica e Estilização Avançada de UI",
+          "description": "Projeto de interfaces responsivas e semânticas com HTML5 e CSS3, baseadas em um sistema de design modular. Uso avançado de Flexbox, CSS Grid e variáveis CSS para a criação de layouts dinâmicos e de fácil manutenção. Implementação de animações fluidas com keyframes e transições, otimização de renderização e conformidade com as melhores práticas de desempenho, SEO e acessibilidade. Integração de pré-processadores e metodologias BEM/SASS para uma estrutura de código escalável e limpa.",
+          "image": "https://i.ibb.co/PsztX6L2/Wr-VXNyz-Suyzh2-Kv-Lo-At-L-thumbnail.png"
+        }
+      ]
+    },
+    "cards": {
+      "title": "Outros Trabalhos",
+      "items": [
+        {
+          "title": "Gerador Avançado de Senhas",
+          "description": "Desenvolvimento de uma ferramenta avançada para geração segura de senhas, com opções de personalização para comprimento, complexidade e símbolos especiais. Implementação de critérios de segurança atualizados e uma interface amigável para proteção ideal dos dados.",
+          "image": "https://i.ibb.co/k2pdQcfZ/Sf-Kwd4-TOStae0qv3-IVbc-MA.png"
+        },
+        {
+          "title": "Clone do Jogo Wordle",
+          "description": "Jogo de palavras interativo desenvolvido com HTML, CSS e JavaScript, com uma grade de 5x6 e teclado virtual, feedback visual dinâmico para letras/posições corretas, gerenciamento de estado do jogo (vitória/derrota), otimizado para desktop e mobile, código modular e de fácil manutenção, e uma experiência fluida e minimalista.",
+          "image": "https://i.ibb.co/ynQ305qT/Wordle-preview.jpg"
+        },
+        {
+          "title": "Componente de Cartão Social",
+          "description": "Componente de UI modular para exibir conteúdo social com avatares, posts, comentários e emblemas personalizáveis. Otimizado para reutilização em diferentes projetos front-end, com design responsivo e animações fluidas. Estruturado de forma modular para facilitar a integração e manutenção, garantindo uma experiência de usuário consistente e moderna.",
+          "image": "https://i.ibb.co/k6402LLX/lv-ZKQJKSR4-Wfi2z1b3-LXjg.png"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Arquiteturas Escaláveis e Soluções Personalizadas",
+      "text": "Os projetos apresentados fornecem uma visão geral da minha jornada no desenvolvimento front-end, com foco na arquitetura de interfaces, otimização de desempenho e qualidade do código. Cada implementação foi projetada considerando escalabilidade, manutenibilidade e acessibilidade, garantindo experiências de usuário suaves e consistentes em diferentes dispositivos. Adotei metodologias de desenvolvimento modernas, padrões de arquitetura estabelecidos e melhores práticas de engenharia para garantir que as aplicações sejam robustas, modulares e facilmente extensíveis. Este conjunto de experiências reflete minha capacidade de enfrentar desafios complexos no desenvolvimento web, equilibrando estética, funcionalidade e desempenho técnico.",
       "button": "Voltar aos Trabalhos"
     }
   }

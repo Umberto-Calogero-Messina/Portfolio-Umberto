@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
 import HomePage from './pages/HomePage';
 import Metin2Page from './pages/Metin2Page/Metin2Page';
+import FrontPage from './pages/FrontPage/FrontPage';
 
 const AppWrap = styled.div``;
 function App() {
@@ -34,8 +35,9 @@ function App() {
         <AppWrap>
           <Navbar />
           <Routes>
-            <Route path="/" element={<HomePage isLoading={isLoading} />} />
-            <Route path="/metin2" element={<Metin2Page />} />
+            <Route path='/' element={<HomePage isLoading={isLoading} />} />
+            <Route path='/metin2' element={<Metin2Page />} />
+            <Route path='/frontpage' element={<FrontPage />} />
           </Routes>
           <Footer />
           <ScrollToTopButton />
@@ -47,4 +49,3 @@ function App() {
 }
 
 export default App;
-

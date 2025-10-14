@@ -9,7 +9,12 @@
     "greeting": "Hi, I'm",
     "description": "I'm a Front-End Web Developer with 8 years of experience in the web and gaming industry, specialized in systems development. I focus on writing clean, scalable, and intuitive code, making collaboration between developers easier and ensuring efficient maintenance.",
     "downloadCV": "Download CV",
-    "roles": ["Umberto Calogero", "Front-End Dev", "Creative", "Gamer"]
+    "roles": [
+      "Umberto Calogero",
+      "Front-End Dev",
+      "Creative",
+      "Gamer"
+    ]
   },
   "education": {
     "title": "Education and Skills",
@@ -46,30 +51,26 @@
     "discover": "Discover more",
     "title": "My Works",
     "items": [
-      {
-        "title": "C++ Architecture - Engine & Performance",
-        "description": "Development of optimized core systems for Metin2 with C++, focusing on advanced memory management, performance optimization and memory leak resolution. Implementation of efficient algorithms for real-time management of thousands of concurrent users."
-      },
-      {
-        "title": "Python - Game Systems & Automation",
-        "description": "Design of modular frameworks in Python for dynamic game systems, process automation and internal tool development. Creation of hybrid Python-C++ APIs for smooth and customizable user experiences."
-      },
-      {
-        "title": "MySQL/MariaDB - Database Architecture",
-        "description": "Scalable database architecture for management of dynamic game configurations and real-time game data. Implementation of advanced stored procedures, optimized queries and automated backup systems for high availability."
-      },
-      {
-        "title": "Work in Progress",
-        "description": "Front-End Developer"
-      },
-      {
-        "title": "Work in Progress",
-        "description": "Web Projects"
-      },
-      {
-        "title": "Work in Progress",
-        "description": "React"
-      }
+        {
+            "title": "Front-End Web Design - Creative Portfolio",
+            "description": "Design and development of an interactive homepage for a videographer portfolio, focusing on UI/UX, responsive layout, refined typography, and subtle animations. Implementation of dynamic sections for services, portfolio, and contacts, optimized for performance and accessibility."
+        },
+        {
+            "title": "Front-End Web Development - To-Do List Application",
+            "description": "Development of a modern and responsive To-Do application, with management of active and completed tasks, intuitive interactions, light/dark mode, and minimal design. Implementation of filters, task status control, and a user-friendly interface to improve daily productivity."
+        },
+        {
+            "title": "C++ Architecture - Engine & Performance",
+            "description": "Development of optimized core systems for Metin2 with C++, focusing on advanced memory management, performance optimization, and memory leak resolution. Implementation of efficient algorithms for real-time management of thousands of concurrent users."
+        },
+        {
+            "title": "Python - Game Systems & Automation",
+            "description": "Design of modular frameworks in Python for dynamic game systems, process automation, and internal tool development. Creation of hybrid Python-C++ APIs for fluid and customizable user experiences."
+        },
+        {
+            "title": "MySQL/MariaDB - Database Architecture",
+            "description": "Architecture of scalable databases for managing dynamic game configurations and real-time game data. Implementation of advanced stored procedures, optimized queries, and automated backup systems for high availability."
+        }
     ]
   },
   "contact": {
@@ -147,6 +148,57 @@
     "conclusion": {
       "title": "Scalable Architectures & Custom Solutions",
       "text": "The presented projects represent end-to-end solutions developed to optimize performance, user experience and operational management of Metin2. Each implementation was designed with scalability, maintainability and specific community needs in mind. I'm available to discuss how these skills can be applied to your project, with focus on robust architectures and enterprise-grade code quality.",
+      "button": "Back to Works"
+    }
+  },
+  "frontPage": {
+    "video": {
+      "title": "",
+      "subtitle": ""
+    },
+    "experience": {
+      "title": "Front-End Experience",
+      "items": [
+        {
+          "title": "React - Advanced Component Architecture & State Management",
+          "description": "Design and development of scalable React architectures based on reusable components, with a focus on performance and maintainability. Implementation of advanced patterns for state management (Context API, Redux Toolkit, React Query) and rendering optimization through memoization and code-splitting. Integration with REST and GraphQL APIs for dynamic data management and creation of reactive and accessible enterprise-level interfaces.",
+          "image": "https://i.ibb.co/nGVx7Jd/photo-1633356122102-3fe601e05bd2.jpg"
+        },
+        {
+          "title": "JavaScript - Application Logic & Interactive Systems",
+          "description": "Development of application logic in JavaScript ES6+, focusing on modular and asynchronous architectures based on Promises and async/await. Implementation of architectural patterns like MVC for interactive and dynamic interfaces. Creation of standalone modules for event handling, data validation, optimizing performance, cross-browser compatibility, and WCAG accessibility.",
+          "image": "https://i.ibb.co/VpHF3Sm6/1-WSXKXYSzz-Ms-QYiiipk-H1-Aw.jpg"
+        },
+        {
+          "title": "HTML/CSS - Semantic Architecture & Advanced UI Styling",
+          "description": "Design of responsive and semantic interfaces with HTML5 and CSS3, based on a modular design system. Advanced use of Flexbox, CSS Grid, and CSS variables for creating dynamic and maintainable layouts. Implementation of fluid animations with keyframes and transitions, rendering optimization, and adherence to best practices for performance, SEO, and accessibility. Integration of preprocessors and BEM/SASS methodologies for a scalable and clean code structure.",
+          "image": "https://i.ibb.co/PsztX6L2/Wr-VXNyz-Suyzh2-Kv-Lo-At-L-thumbnail.png"
+        }
+      ]
+    },
+    "cards": {
+      "title": "Other Works",
+      "items": [
+        {
+          "title": "Advanced Password Generator",
+          "description": "Development of an advanced tool for secure password generation, with customization options for length, complexity, and special symbols. Implementation of updated security criteria and a user-friendly interface for optimal data protection.",
+          "image": "https://i.ibb.co/k2pdQcfZ/Sf-Kwd4-TOStae0qv3-IVbc-MA.png"
+        },
+        {
+          "title": "Wordle Game Clone",
+          "description": "Interactive word game developed with HTML, CSS, and JavaScript, featuring a 5x6 grid and virtual keyboard, dynamic visual feedback for correct letters/positions, game state management (win/loss), optimized for desktop and mobile, modular and maintainable code, and a smooth, minimalist experience.",
+          "image": "https://i.ibb.co/ynQ305qT/Wordle-preview.jpg"
+        },
+        {
+          "title": "Social Card Component",
+          "description": "Modular UI component for displaying social content with avatars, posts, comments, and customizable badges. Optimized for reuse in different front-end projects, with a responsive design and fluid animations. Structured in a modular way to facilitate integration and maintenance, ensuring a consistent and modern user experience.",
+          "image": "https://i.ibb.co/k6402LLX/lv-ZKQJKSR4-Wfi2z1b3-LXjg.png"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Scalable Architectures & Custom Solutions",
+      "text": "The presented projects provide an overview of my journey in front-end development, with a focus on interface architecture, performance optimization, and code quality. Each implementation was designed considering scalability, maintainability, and accessibility, ensuring smooth and consistent user experiences across different devices. I have adopted modern development methodologies, established architectural patterns, and engineering best practices to ensure that applications are robust, modular, and easily extensible. This set of experiences reflects my ability to tackle complex challenges in web development, balancing aesthetics, functionality, and technical performance.",
       "button": "Back to Works"
     }
   }

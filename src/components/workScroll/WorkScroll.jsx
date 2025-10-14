@@ -22,6 +22,14 @@ import {
 // Static data (non-translatable)
 const staticData = [
   {
+    image: 'https://i.ibb.co/d4NGdKYn/front-wallpaper.jpg',
+    link: '/frontpage'
+  },
+  {
+    image: 'https://i.ibb.co/tp3rtFhm/to-do-list.png',
+    link: '/frontpage'
+  },
+  {
     image: 'https://i.ibb.co/6cSfCN36/cpp-wallpaper.png',
     link: '/metin2'
   },
@@ -32,18 +40,6 @@ const staticData = [
   {
     image: 'https://i.ibb.co/whWcQ8zJ/navicat-wallpaper.png',
     link: '/metin2'
-  },
-  {
-    image: 'https://i.ibb.co/23WYmHfr/Copilot-20251007-185106.png',
-    link: ''
-  },
-  {
-    image: 'https://i.ibb.co/23WYmHfr/Copilot-20251007-185106.png',
-    link: ''
-  },
-  {
-    image: 'https://i.ibb.co/23WYmHfr/Copilot-20251007-185106.png',
-    link: ''
   }
 ];
 
@@ -76,7 +72,7 @@ const WorkScroll = () => {
   const coverRef = useRef(null);
 
   const stateRef = useRef({
-    order: [0, 1, 2, 3, 4, 5],
+    order: Array.from({ length: data.length }, (_, i) => i),
     detailsEven: true,
     offsetTop: 200,
     offsetLeft: 700,

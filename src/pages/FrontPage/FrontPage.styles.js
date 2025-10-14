@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { mq } from '../../Styles/styledSystem';
 import heroBanner from '../../assets/images/banner-scaled.jpg';
 
-export const Metin2PageContainer = styled.div`
+export const FrontPageContainer = styled.div`
   background-image: url(${heroBanner});
     background-position: right;
   background-repeat: no-repeat;
@@ -13,35 +13,12 @@ export const Metin2PageContainer = styled.div`
 
 // --- Hero Section ---
 export const HeroSection = styled.section`
-  position: relative;
-  height: 100vh;
+margin-top: 50px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-`;
-
-export const VideoBackground = styled.iframe`
-background-color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: 0;
 `;
 
 export const HeroContent = styled.div`

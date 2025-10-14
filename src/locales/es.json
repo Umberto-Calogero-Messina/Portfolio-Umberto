@@ -46,30 +46,26 @@
     "discover": "Descubre más",
     "title": "Mis trabajos",
     "items": [
-      {
-        "title": "Arquitectura C++ - Motor & Rendimiento",
-        "description": "Desarrollo de sistemas core optimizados para Metin2 con C++, enfocado en gestión avanzada de memoria, optimización de rendimiento y resolución de memory leaks. Implementación de algoritmos eficientes para gestión real-time de miles de concurrentes."
-      },
-      {
-        "title": "Python - Sistemas de Juego & Automatización",
-        "description": "Diseño de frameworks modulares en Python para sistemas de juego dinámicos, automatización de procesos y desarrollo de herramientas internas. Creación de APIs híbridas Python-C++ para experiencias de usuario fluidas y personalizables."
-      },
-      {
-        "title": "MySQL/MariaDB - Arquitectura de Base de Datos",
-        "description": "Arquitectura de bases de datos escalables para gestión de configuraciones dinámicas y datos de juego en tiempo real. Implementación de stored procedures avanzadas, queries optimizadas y sistemas de backup automatizados para alta disponibilidad."
-      },
-      {
-        "title": "Trabajo en Progreso",
-        "description": "Desarrollador Front-End"
-      },
-      {
-        "title": "Trabajo en Progreso",
-        "description": "Proyectos Web"
-      },
-      {
-        "title": "Trabajo en Progreso",
-        "description": "React"
-      }
+        {
+            "title": "Diseño Web Front-End - Portfolio Creativo",
+            "description": "Diseño y desarrollo de una página de inicio interactiva para un portfolio de videógrafos, con foco en UI/UX, diseño responsivo, tipografía refinada y animaciones sutiles. Implementación de secciones dinámicas para servicios, portfolio y contactos, optimizadas para rendimiento y accesibilidad."
+        },
+        {
+            "title": "Desarrollo Web Front-End - Aplicación de Lista de Tareas",
+            "description": "Desarrollo de una aplicación de lista de tareas moderna y responsiva, con gestión de tareas activas y completadas, interacciones intuitivas, modo claro/oscuro y diseño minimalista. Implementación de filtros, control del estado de las tareas y una interfaz fácil de usar para mejorar la productividad diaria."
+        },
+        {
+            "title": "Arquitectura C++ - Motor y Rendimiento",
+            "description": "Desarrollo de sistemas core optimizados para Metin2 con C++, enfocado en la gestión avanzada de memoria, optimización del rendimiento y resolución de fugas de memoria. Implementación de algoritmos eficientes para la gestión en tiempo real de miles de usuarios concurrentes."
+        },
+        {
+            "title": "Python - Sistemas de Juego y Automatización",
+            "description": "Diseño de frameworks modulares en Python para sistemas de juego dinámicos, automatización de procesos y desarrollo de herramientas internas. Creación de APIs híbridas Python-C++ para experiencias de usuario fluidas y personalizables."
+        },
+        {
+            "title": "MySQL/MariaDB - Arquitectura de Base de Datos",
+            "description": "Arquitectura de bases de datos escalables para la gestión de configuraciones de juego dinámicas y datos de juego en tiempo real. Implementación de procedimientos almacenados avanzados, consultas optimizadas y sistemas de copia de seguridad automatizados para alta disponibilidad."
+        }
     ]
   },
   "contact": {
@@ -147,6 +143,57 @@
     "conclusion": {
       "title": "Arquitecturas Escalables & Soluciones Personalizadas",
       "text": "Los proyectos presentados representan soluciones end-to-end desarrolladas para optimizar rendimiento, experiencia de usuario y gestión operativa de Metin2. Cada implementación fue diseñada pensando en escalabilidad, mantenibilidad y necesidades específicas de la comunidad. Estoy disponible para discutir cómo estas competencias pueden aplicarse a su proyecto, con enfoque en arquitecturas robustas y código de calidad enterprise-grade.",
+      "button": "Volver a Trabajos"
+    }
+  },
+  "frontPage": {
+    "video": {
+      "title": "",
+      "subtitle": ""
+    },
+    "experience": {
+      "title": "Experiencia Front-End",
+      "items": [
+        {
+          "title": "React - Arquitectura Avanzada de Componentes y Gestión de Estado",
+          "description": "Diseño y desarrollo de arquitecturas React escalables basadas en componentes reutilizables, con especial atención al rendimiento y la mantenibilidad. Implementación de patrones avanzados para la gestión del estado (Context API, Redux Toolkit, React Query) y optimización del renderizado mediante memoization y code-splitting. Integración con API REST y GraphQL para la gestión dinámica de datos y creación de interfaces reactivas y accesibles a nivel empresarial.",
+          "image": "https://i.ibb.co/nGVx7Jd/photo-1633356122102-3fe601e05bd2.jpg"
+        },
+        {
+          "title": "JavaScript - Lógica de Aplicación y Sistemas Interactivos",
+          "description": "Desarrollo de lógicas de aplicación en JavaScript ES6+, con foco en arquitecturas modulares y asíncronas basadas en Promises y async/await. Implementación de patrones arquitectónicos como MVC para interfaces interactivas y dinámicas. Creación de módulos autónomos para la gestión de eventos, validación de datos, optimizando el rendimiento, la compatibilidad entre navegadores y la accesibilidad WCAG.",
+          "image": "https://i.ibb.co/VpHF3Sm6/1-WSXKXYSzz-Ms-QYiiipk-H1-Aw.jpg"
+        },
+        {
+          "title": "HTML/CSS - Arquitectura Semántica y Estilizado Avanzado de UI",
+          "description": "Diseño de interfaces responsivas y semánticas con HTML5 y CSS3, basadas en un sistema de diseño modular. Uso avanzado de Flexbox, CSS Grid y variables CSS para la creación de layouts dinámicos y mantenibles. Implementación de animaciones fluidas con keyframes y transiciones, optimización del renderizado y respeto de las mejores prácticas para rendimiento, SEO y accesibilidad. Integración de preprocesadores y metodologías BEM/SASS para una estructura de código escalable y limpia.",
+          "image": "https://i.ibb.co/PsztX6L2/Wr-VXNyz-Suyzh2-Kv-Lo-At-L-thumbnail.png"
+        }
+      ]
+    },
+    "cards": {
+      "title": "Otros Trabajos",
+      "items": [
+        {
+          "title": "Generador Avanzado de Contraseñas",
+          "description": "Desarrollo de una herramienta avanzada para la generación segura de contraseñas, con opciones de personalización para longitud, complejidad y símbolos especiales. Implementación de criterios de seguridad actualizados y una interfaz fácil de usar para una protección óptima de los datos.",
+          "image": "https://i.ibb.co/k2pdQcfZ/Sf-Kwd4-TOStae0qv3-IVbc-MA.png"
+        },
+        {
+          "title": "Clon del Juego Wordle",
+          "description": "Juego de palabras interactivo desarrollado con HTML, CSS y JavaScript, con una cuadrícula de 5x6 y teclado virtual, retroalimentación visual dinámica para letras correctas/posiciones correctas, gestión de estados de juego (victoria/derrota), optimizado para escritorio y móvil, código modular y mantenible, y una experiencia fluida y minimalista.",
+          "image": "https://i.ibb.co/ynQ305qT/Wordle-preview.jpg"
+        },
+        {
+          "title": "Componente de Tarjeta Social",
+          "description": "Componente de UI modular para mostrar contenido social con avatares, publicaciones, comentarios e insignias personalizables. Optimizado para su reutilización en diferentes proyectos front-end, con un diseño responsivo y animaciones fluidas. Estructurado de forma modular para facilitar la integración y el mantenimiento, garantizando una experiencia de usuario coherente y moderna.",
+          "image": "https://i.ibb.co/k6402LLX/lv-ZKQJKSR4-Wfi2z1b3-LXjg.png"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Arquitecturas Escalables y Soluciones Personalizadas",
+      "text": "Los proyectos presentados constituyen una panorámica de mi trayectoria en el desarrollo front-end, con un enfoque en la arquitectura de interfaces, la optimización del rendimiento y la calidad del código. Cada implementación ha sido diseñada considerando la escalabilidad, la mantenibilidad y la accesibilidad, garantizando experiencias de usuario fluidas y coherentes en diferentes dispositivos. He adoptado metodologías modernas de desarrollo, patrones arquitectónicos consolidados y mejores prácticas de ingeniería para asegurar que las aplicaciones sean robustas, modulares y fácilmente extensibles. Este conjunto de experiencias refleja mi capacidad para afrontar desafíos complejos en el desarrollo web, equilibrando estética, funcionalidad y rendimiento técnico.",
       "button": "Volver a Trabajos"
     }
   }
